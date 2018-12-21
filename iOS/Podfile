@@ -1,0 +1,30 @@
+platform :ios, '9.0'
+use_frameworks!
+
+def shared_pods
+  pod 'Alamofire'
+#  pod 'AlamofireLogger'
+pod 'AlamofireActivityLogger'
+  # pod 'SwiftyJSON'
+  # pod 'ObjectMapper'
+  pod 'SwiftKeychainWrapper'
+  pod 'MBProgressHUD'
+  # pod 'IQKeyboardManagerSwift'
+  pod 'Kingfisher'
+  pod 'Fabric'
+  pod 'Crashlytics'
+  # pod 'RealmSwift'
+  # pod 'Toast-Swift'
+  pod 'FolioReaderKit'
+  pod 'SideMenu'
+  pod 'Toast-Swift'
+  pod 'MZDownloadManager'
+  pod 'OAuthSwift'
+  pod 'MatomoTracker'
+  pod 'Firebase/Core'
+  pod 'Firebase/Messaging'
+end
+
+target 'WolneLektury' do
+    shared_pods
+end

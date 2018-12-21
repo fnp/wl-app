@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="B18-fA-3GF" customClass="FilterCollectionViewCell" customModule="WolneLektury" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="136" height="30"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="136" height="30"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="navbar_checkbox" translatesAutoresizingMaskIntoConstraints="NO" id="Z6W-4v-Yq4">
+                        <rect key="frame" x="5" y="0.0" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="7U1-08-jU6"/>
+                            <constraint firstAttribute="height" constant="30" id="Kvv-3L-82e"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="navbar_checkbox-tick" translatesAutoresizingMaskIntoConstraints="NO" id="uNk-LA-tZJ">
+                        <rect key="frame" x="5" y="0.0" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="Q7Q-eX-XQ7"/>
+                            <constraint firstAttribute="height" constant="30" id="VUa-dN-QT5"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJM-8z-Yi6">
+                        <rect key="frame" x="37" y="7" width="99" height="17"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="Z6W-4v-Yq4" firstAttribute="leading" secondItem="B18-fA-3GF" secondAttribute="leading" constant="5" id="0Th-7t-c60"/>
+                <constraint firstAttribute="trailing" secondItem="dJM-8z-Yi6" secondAttribute="trailing" id="DNQ-5m-uFH"/>
+                <constraint firstItem="Z6W-4v-Yq4" firstAttribute="top" secondItem="B18-fA-3GF" secondAttribute="top" id="Rml-up-YM5"/>
+                <constraint firstItem="dJM-8z-Yi6" firstAttribute="centerY" secondItem="B18-fA-3GF" secondAttribute="centerY" id="UBt-f1-jYw"/>
+                <constraint firstItem="dJM-8z-Yi6" firstAttribute="leading" secondItem="Z6W-4v-Yq4" secondAttribute="trailing" constant="2" id="cW7-zh-Ud0"/>
+                <constraint firstItem="uNk-LA-tZJ" firstAttribute="centerY" secondItem="B18-fA-3GF" secondAttribute="centerY" id="i3g-NQ-NNJ"/>
+                <constraint firstItem="uNk-LA-tZJ" firstAttribute="trailing" secondItem="Z6W-4v-Yq4" secondAttribute="trailing" id="kWn-LR-ClY"/>
+                <constraint firstItem="Z6W-4v-Yq4" firstAttribute="centerY" secondItem="B18-fA-3GF" secondAttribute="centerY" id="kxy-gp-kFY"/>
+                <constraint firstItem="uNk-LA-tZJ" firstAttribute="leading" secondItem="Z6W-4v-Yq4" secondAttribute="leading" id="oLh-zc-X7O"/>
+                <constraint firstAttribute="bottom" secondItem="Z6W-4v-Yq4" secondAttribute="bottom" id="wmy-iT-qts"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="NnD-tu-bfx"/>
+            <connections>
+                <outlet property="checkboxBgImageView" destination="Z6W-4v-Yq4" id="Dh8-9z-zxp"/>
+                <outlet property="checkboxTickImageView" destination="uNk-LA-tZJ" id="jrk-eg-oaz"/>
+                <outlet property="titleLabel" destination="dJM-8z-Yi6" id="zBu-Of-3DO"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="navbar_checkbox" width="21" height="21"/>
+        <image name="navbar_checkbox-tick" width="13" height="10"/>
+    </resources>
+</document>

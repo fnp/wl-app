@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="56" id="KGk-i7-Jjw" customClass="BookDetailsButtonTableViewCell" customModule="WolneLektury" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="55.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NKM-iu-F90" customClass="ProgressLabel" customModule="WolneLektury" customModuleProvider="target">
+                        <rect key="frame" x="53" y="6" width="269" height="43"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="43" id="oxl-fo-PbF"/>
+                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="vDU-Ci-XcW"/>
+                        </constraints>
+                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IQ5-kE-Rse">
+                        <rect key="frame" x="287" y="18" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="deM-ID-dej"/>
+                            <constraint firstAttribute="width" constant="20" id="zt2-I8-lLF"/>
+                        </constraints>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yPz-SB-GDW">
+                        <rect key="frame" x="327" y="7" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="7GT-gY-qQK"/>
+                            <constraint firstAttribute="height" constant="40" id="djw-yh-hHi"/>
+                        </constraints>
+                        <color key="tintColor" red="0.0" green="0.50588235294117645" blue="0.53333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <state key="normal" image="icon_trash"/>
+                        <connections>
+                            <action selector="deleteButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Yh5-G0-3hm"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="NKM-iu-F90" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="9U1-bV-eoe"/>
+                    <constraint firstItem="NKM-iu-F90" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="H8D-BV-Uan"/>
+                    <constraint firstItem="IQ5-kE-Rse" firstAttribute="leading" secondItem="NKM-iu-F90" secondAttribute="trailing" constant="-35" id="Mfn-lR-zYa"/>
+                    <constraint firstItem="yPz-SB-GDW" firstAttribute="leading" secondItem="NKM-iu-F90" secondAttribute="trailing" constant="5" id="WVM-oD-XuR"/>
+                    <constraint firstAttribute="trailing" secondItem="NKM-iu-F90" secondAttribute="trailing" priority="999" constant="53" id="XrQ-r6-Bt8"/>
+                    <constraint firstItem="NKM-iu-F90" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" priority="999" constant="53" id="iKN-hm-Frq"/>
+                    <constraint firstItem="yPz-SB-GDW" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="k0S-cg-2Yc"/>
+                    <constraint firstItem="IQ5-kE-Rse" firstAttribute="centerY" secondItem="NKM-iu-F90" secondAttribute="centerY" id="kA2-XB-3zm"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="button" destination="NKM-iu-F90" id="LWx-zF-gC3"/>
+                <outlet property="buttonIcon" destination="IQ5-kE-Rse" id="SBb-PA-pTf"/>
+                <outlet property="deleteButton" destination="yPz-SB-GDW" id="ZXx-9e-5kV"/>
+            </connections>
+            <point key="canvasLocation" x="25" y="58"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="icon_trash" width="14" height="16"/>
+    </resources>
+</document>

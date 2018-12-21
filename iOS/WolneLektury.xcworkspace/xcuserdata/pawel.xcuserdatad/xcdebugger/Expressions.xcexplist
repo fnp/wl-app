@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "FolioReaderPage.webViewDidFinishLoad(_:):FolioReaderPage.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.folioReader.readerCenter?.pageScrollDirection">
+            </PersistentString>
+            <PersistentString
+               value = "self.folioReader.needsRTLChange">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "FolioReaderPage.refreshPageMode():FolioReaderPage.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "webView.frame.width">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "BookDetailsViewController.viewDidLoad():BookDetailsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "UIApplication.shared.statusBarFrame.size.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "FolioReaderPage.webViewFrame():FolioReaderPage.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "bounds.origin.x">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "BookDetailsModel.getAuthor():BookDetailsModel.swift">
+      </ContextState>
+      <ContextState
+         contextName = "RLMApplication.addBookToDownloaded(bookDetailsModel:):RLMApplication.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "authors.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MenuViewController.viewDidLoad():MenuViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "tableView.contentOffset">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "FilterViewController.getSection(filterSection:):FilterViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "FilterViewController.collectionView(_:didSelectItemAt:):FilterViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in OAuthSwiftHTTPRequest.start(success:failure:):OAuthSwiftHTTPRequest.swift">
+      </ContextState>
+      <ContextState
+         contextName = "BookDetailsInfoTableViewCell.awakeFromNib():BookDetailsInfoTableViewCell.swift">
+      </ContextState>
+      <ContextState
+         contextName = "BookDetailsViewController.tableView(_:cellForRowAt:):BookDetailsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "tableView.frame">
+            </PersistentString>
+            <PersistentString
+               value = "tableView.contentInset">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SearchViewController.setupSearchBar():SearchViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "navigationItem.titleView.bounds">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in FolioReader.nightMode.setter:FolioReaderKit.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.readerContainer?.readerConfig.nightModeBackground.cgColor.components">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "NetworkService.urlStringWithRequestTokenParameters(action:):NetworkService.swift">
+      </ContextState>
+      <ContextState
+         contextName = "SearchViewController.filtersChanged(reloadData:):SearchViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = " filterTopConstraint.constant">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "FilterSectionHeaderCollectionReusableView.refreshButtonAction(_:):FilterSectionHeaderCollectionReusableView.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #2 in AppDelegate.application(_:didFinishLaunchingWithOptions:):AppDelegate.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in BookDetailsModel.getAuthor():BookDetailsModel.swift">
+      </ContextState>
+      <ContextState
+         contextName = "BookDetailsHeaderTableViewCell.setup(bookModel:):BookDetailsHeaderTableViewCell.swift">
+      </ContextState>
+      <ContextState
+         contextName = "AppDelegate.applicationHandle(url:):AppDelegate.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "url.host">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SearchViewController.singleTap(sender:):SearchViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "navigationItem.titleView.bounds">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "OAuthSwiftHTTPRequest.start(success:failure:):OAuthSwiftHTTPRequest.swift">
+      </ContextState>
+      <ContextState
+         contextName = "PlayerController.saveCurrentTrackNumber():PlayerController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in FilterViewController.getKinds():FilterViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "PlayerController.changePlaybackPositionCommand(event:):PlayerController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "event.positionTime">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LeftAlignedCollectionViewFlowLayout.layoutAttributesForElements(in:):FilterViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "LibraryViewController.viewDidLoad():LibraryViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "navigationController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SearchViewController.collectionView(_:numberOfItemsInSection:):SearchViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "numberOfFilters()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "BookDescriptionView.setup(bookDetailsModel:):BookDescriptionView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "bookDetailsModel.totalChapters">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "OAuth1Swift.postOAuthRequestToken(callbackURL:success:failure:):OAuth1Swift.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.requestTokenUrl">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PlayerController.startTimer():PlayerController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "timer.isValid">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "OAuthSwiftCredential.signature(method:url:parameters:):OAuthSwiftCredential.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "url.absoluteString">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MenuViewController.refreshBottomView():MenuViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "appDelegate.rlmApplication">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

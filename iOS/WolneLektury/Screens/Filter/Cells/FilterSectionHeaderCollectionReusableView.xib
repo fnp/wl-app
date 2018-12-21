@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FilterSectionHeaderCollectionReusableView" id="O3K-ZT-8Gz" customClass="FilterSectionHeaderCollectionReusableView" customModule="WolneLektury" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="179"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cce-r6-xvO">
+                    <rect key="frame" x="21" y="14.5" width="36" height="17"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xuV-St-3U1">
+                    <rect key="frame" x="67" y="22.5" width="282" height="1"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="TCi-fA-OFJ"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vkW-mp-4ey" customClass="ActivityIndicatorButton" customModule="WolneLektury" customModuleProvider="target">
+                    <rect key="frame" x="162.5" y="77.5" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="SFs-ao-EN3"/>
+                        <constraint firstAttribute="height" constant="50" id="YhN-df-ef8"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <action selector="refreshButtonAction:" destination="O3K-ZT-8Gz" eventType="touchUpInside" id="EVS-di-VUe"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="xuV-St-3U1" firstAttribute="centerY" secondItem="cce-r6-xvO" secondAttribute="centerY" id="ErS-jk-nbT"/>
+                <constraint firstItem="xuV-St-3U1" firstAttribute="leading" secondItem="cce-r6-xvO" secondAttribute="trailing" constant="10" id="Gej-fQ-NHx"/>
+                <constraint firstItem="cce-r6-xvO" firstAttribute="leading" secondItem="O3K-ZT-8Gz" secondAttribute="leading" constant="21" id="QcB-dl-Gpc"/>
+                <constraint firstItem="vkW-mp-4ey" firstAttribute="top" secondItem="xuV-St-3U1" secondAttribute="bottom" constant="54" id="SqF-bK-Ga7"/>
+                <constraint firstItem="cce-r6-xvO" firstAttribute="top" secondItem="a2c-qx-dAX" secondAttribute="top" constant="14.5" id="UHB-i6-Up0"/>
+                <constraint firstItem="a2c-qx-dAX" firstAttribute="trailing" secondItem="xuV-St-3U1" secondAttribute="trailing" constant="26" id="ez5-Xw-aYX"/>
+                <constraint firstItem="vkW-mp-4ey" firstAttribute="centerX" secondItem="O3K-ZT-8Gz" secondAttribute="centerX" id="qwk-7A-od1"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="a2c-qx-dAX"/>
+            <connections>
+                <outlet property="refreshButton" destination="vkW-mp-4ey" id="rqK-IB-Yaf"/>
+                <outlet property="titleLabel" destination="cce-r6-xvO" id="Vvd-Bf-TGX"/>
+            </connections>
+            <point key="canvasLocation" x="25.5" y="-34.5"/>
+        </collectionReusableView>
+    </objects>
+</document>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="182" id="KGk-i7-Jjw" customClass="MenuBottomTableViewCell" customModule="WolneLektury" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="179.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ZALOGOWANY JAKO" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OVD-fI-PiE">
+                        <rect key="frame" x="109.5" y="16" width="102" height="12"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cdu-3X-GgU">
+                        <rect key="frame" x="98.5" y="66" width="123" height="26"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="123" id="9mh-MX-sWe"/>
+                            <constraint firstAttribute="height" constant="26" id="gEC-l6-bGj"/>
+                        </constraints>
+                        <state key="normal" title="Button">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                        <connections>
+                            <action selector="profileButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ahg-5f-Js8"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VAR-p5-YtT">
+                        <rect key="frame" x="98.5" y="107" width="123" height="26"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="26" id="2KW-Tz-XUh"/>
+                            <constraint firstAttribute="width" constant="123" id="LWL-Gh-Kb2"/>
+                        </constraints>
+                        <state key="normal" title="Button">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                        <connections>
+                            <action selector="signoutButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="wG6-Sz-kC4"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="OVD-fI-PiE" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="9YP-Zg-HEc"/>
+                    <constraint firstItem="Cdu-3X-GgU" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="MKx-bl-FHc"/>
+                    <constraint firstItem="OVD-fI-PiE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="PWf-ts-iMt"/>
+                    <constraint firstItem="VAR-p5-YtT" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Tww-yy-2ao"/>
+                    <constraint firstItem="VAR-p5-YtT" firstAttribute="top" secondItem="Cdu-3X-GgU" secondAttribute="bottom" constant="15" id="c4v-ah-SbM"/>
+                    <constraint firstItem="Cdu-3X-GgU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="66" id="og9-te-YTr"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="showProfileButton" destination="Cdu-3X-GgU" id="U5y-QI-dJy"/>
+                <outlet property="signOutButton" destination="VAR-p5-YtT" id="EhO-2K-gBD"/>
+                <outlet property="titleLabel" destination="OVD-fI-PiE" id="R2n-2l-SrZ"/>
+            </connections>
+            <point key="canvasLocation" x="25" y="121"/>
+        </tableViewCell>
+    </objects>
+</document>

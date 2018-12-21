@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="210" id="KGk-i7-Jjw" customClass="BookDetailsHeaderTableViewCell" customModule="WolneLektury" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="210"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="209.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VY8-qH-xdZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="209.5"/>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XXx-gY-5qA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="209.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iqV-Nj-f00">
+                        <rect key="frame" x="189" y="43.5" width="124" height="166"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="124" id="Kkv-tq-be9"/>
+                            <constraint firstAttribute="height" constant="166" id="avB-l9-7X9"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gae-jc-rla">
+                        <rect key="frame" x="20" y="48.5" width="159" height="156"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="VY8-qH-xdZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="4V0-pf-7Md"/>
+                    <constraint firstItem="gae-jc-rla" firstAttribute="centerY" secondItem="iqV-Nj-f00" secondAttribute="centerY" id="4rM-Qh-Ivb"/>
+                    <constraint firstItem="VY8-qH-xdZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="5DB-yL-jTE"/>
+                    <constraint firstItem="gae-jc-rla" firstAttribute="height" secondItem="iqV-Nj-f00" secondAttribute="height" constant="-10" id="8jE-hN-I7N"/>
+                    <constraint firstAttribute="trailing" secondItem="XXx-gY-5qA" secondAttribute="trailing" id="8kJ-Fu-cQp"/>
+                    <constraint firstItem="XXx-gY-5qA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="IKK-pR-tOf"/>
+                    <constraint firstItem="XXx-gY-5qA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="MF4-j6-FKy"/>
+                    <constraint firstAttribute="bottom" secondItem="VY8-qH-xdZ" secondAttribute="bottom" id="N5A-J6-CoX"/>
+                    <constraint firstAttribute="bottom" secondItem="XXx-gY-5qA" secondAttribute="bottom" id="OZD-TP-QBK"/>
+                    <constraint firstItem="iqV-Nj-f00" firstAttribute="leading" secondItem="gae-jc-rla" secondAttribute="trailing" constant="10" id="V44-29-Mh9"/>
+                    <constraint firstItem="gae-jc-rla" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="bZP-gB-I5d"/>
+                    <constraint firstAttribute="trailing" secondItem="VY8-qH-xdZ" secondAttribute="trailing" id="cSJ-4j-qWu"/>
+                    <constraint firstAttribute="bottom" secondItem="iqV-Nj-f00" secondAttribute="bottom" id="dfB-Fv-mTM"/>
+                    <constraint firstAttribute="trailing" secondItem="iqV-Nj-f00" secondAttribute="trailing" constant="7" id="wJM-27-fMe"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="bgImageView" destination="VY8-qH-xdZ" id="euA-AP-oI5"/>
+                <outlet property="bgOverlayView" destination="XXx-gY-5qA" id="Bb3-96-Pfx"/>
+                <outlet property="miniatureImageView" destination="iqV-Nj-f00" id="anL-eX-Uxv"/>
+                <outlet property="titleLabel" destination="gae-jc-rla" id="a87-Mb-RPR"/>
+            </connections>
+            <point key="canvasLocation" x="25" y="135"/>
+        </tableViewCell>
+    </objects>
+</document>

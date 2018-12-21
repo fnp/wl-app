@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="203" id="KGk-i7-Jjw" customClass="LibraryEarlyAccessTableViewCell" customModule="WolneLektury" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="203"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="202.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AaB-N9-zs0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="193"/>
+                        <color key="backgroundColor" red="0.0" green="0.4039215686" blue="0.42745098040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nys-P3-hdk">
+                        <rect key="frame" x="14" y="8" width="290" height="177"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wUL-dS-jE6">
+                                <rect key="frame" x="0.0" y="0.0" width="120" height="177"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B9G-fP-jBa">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="177"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aAu-YM-v71" customClass="BookImageOverlayView" customModule="WolneLektury" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="177"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="B9G-fP-jBa" secondAttribute="trailing" id="1ZO-Ub-3jn"/>
+                                    <constraint firstAttribute="bottom" secondItem="B9G-fP-jBa" secondAttribute="bottom" id="1ll-Gu-G8V"/>
+                                    <constraint firstItem="B9G-fP-jBa" firstAttribute="leading" secondItem="wUL-dS-jE6" secondAttribute="leading" id="7MD-cS-S8l"/>
+                                    <constraint firstItem="aAu-YM-v71" firstAttribute="top" secondItem="wUL-dS-jE6" secondAttribute="top" id="Bm7-Wa-GCL"/>
+                                    <constraint firstAttribute="trailing" secondItem="aAu-YM-v71" secondAttribute="trailing" id="Jw7-bS-eCr"/>
+                                    <constraint firstAttribute="bottom" secondItem="aAu-YM-v71" secondAttribute="bottom" id="WHI-TD-GwL"/>
+                                    <constraint firstItem="aAu-YM-v71" firstAttribute="leading" secondItem="wUL-dS-jE6" secondAttribute="leading" id="Zhl-DQ-lHx"/>
+                                    <constraint firstAttribute="width" constant="120" id="dnz-Yl-hST"/>
+                                    <constraint firstItem="B9G-fP-jBa" firstAttribute="top" secondItem="wUL-dS-jE6" secondAttribute="top" id="zQg-cV-e6O"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b3t-3h-4gU" customClass="BookDescriptionView" customModule="WolneLektury" customModuleProvider="target">
+                                <rect key="frame" x="136" y="0.0" width="154" height="177"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="177" placeholder="YES" id="0oB-7R-0r4"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="b3t-3h-4gU" secondAttribute="trailing" id="Afn-cM-oMb"/>
+                            <constraint firstItem="wUL-dS-jE6" firstAttribute="leading" secondItem="Nys-P3-hdk" secondAttribute="leading" id="RWK-td-VXa"/>
+                            <constraint firstItem="wUL-dS-jE6" firstAttribute="top" secondItem="Nys-P3-hdk" secondAttribute="top" id="XMn-Sq-8KK"/>
+                            <constraint firstItem="b3t-3h-4gU" firstAttribute="height" relation="lessThanOrEqual" secondItem="aAu-YM-v71" secondAttribute="height" id="Y1u-m7-I8G"/>
+                            <constraint firstItem="b3t-3h-4gU" firstAttribute="centerY" secondItem="wUL-dS-jE6" secondAttribute="centerY" id="fAR-iF-8IU"/>
+                            <constraint firstItem="b3t-3h-4gU" firstAttribute="leading" secondItem="wUL-dS-jE6" secondAttribute="trailing" constant="16" id="lZ7-1O-yHu"/>
+                            <constraint firstAttribute="height" constant="177" id="lbg-5g-R32"/>
+                            <constraint firstAttribute="bottom" secondItem="wUL-dS-jE6" secondAttribute="bottom" id="mGc-ID-aqv"/>
+                        </constraints>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ivr-0B-PF4" customClass="ActivityIndicatorButton" customModule="WolneLektury" customModuleProvider="target">
+                        <rect key="frame" x="135" y="76.5" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="NoK-Nh-RrW"/>
+                            <constraint firstAttribute="height" constant="50" id="Rb4-dA-lqb"/>
+                        </constraints>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QJy-sj-07z">
+                        <rect key="frame" x="16" y="88" width="288" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="AaB-N9-zs0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="0Nn-Ol-Z5r"/>
+                    <constraint firstAttribute="bottom" secondItem="AaB-N9-zs0" secondAttribute="bottom" constant="10" id="0c6-ZZ-SyO"/>
+                    <constraint firstItem="AaB-N9-zs0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="IgI-xH-klX"/>
+                    <constraint firstItem="QJy-sj-07z" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="K8e-5g-N80"/>
+                    <constraint firstAttribute="trailing" secondItem="Nys-P3-hdk" secondAttribute="trailing" constant="16" id="SEQ-13-hSZ"/>
+                    <constraint firstAttribute="trailing" secondItem="QJy-sj-07z" secondAttribute="trailing" constant="16" id="YTB-vG-Udr"/>
+                    <constraint firstItem="Nys-P3-hdk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="14" id="buh-Pk-gMX"/>
+                    <constraint firstItem="QJy-sj-07z" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="-5" id="crL-vX-bGD"/>
+                    <constraint firstItem="ivr-0B-PF4" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="k9r-72-4rk"/>
+                    <constraint firstItem="Nys-P3-hdk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="lvk-QE-9bi"/>
+                    <constraint firstAttribute="trailing" secondItem="AaB-N9-zs0" secondAttribute="trailing" id="shU-17-qyn"/>
+                    <constraint firstItem="ivr-0B-PF4" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="wdf-vg-ogu"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="bookDescriptionView" destination="b3t-3h-4gU" id="pOc-Sv-k8l"/>
+                <outlet property="containerView" destination="Nys-P3-hdk" id="5hN-4S-ZC8"/>
+                <outlet property="miniatureBgView" destination="wUL-dS-jE6" id="FoZ-sa-d9k"/>
+                <outlet property="miniatureImageView" destination="B9G-fP-jBa" id="gbs-YV-y4k"/>
+                <outlet property="miniatureOverlayView" destination="aAu-YM-v71" id="x78-Aa-t9F"/>
+                <outlet property="noPremiumBookLabel" destination="QJy-sj-07z" id="yuE-41-p4j"/>
+                <outlet property="refreshButton" destination="ivr-0B-PF4" id="7Lr-fW-7EK"/>
+            </connections>
+            <point key="canvasLocation" x="26" y="63.5"/>
+        </tableViewCell>
+    </objects>
+</document>
