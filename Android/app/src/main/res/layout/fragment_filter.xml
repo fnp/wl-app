@@ -1,0 +1,138 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/turquoise_dark"
+            android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical"
+        android:paddingBottom="20dp"
+        android:paddingLeft="@dimen/filters_side_padding"
+        android:paddingRight="@dimen/filters_side_padding"
+        android:paddingTop="20dp">
+
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/swLecturesOnly"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@string/only_lecture"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            app:theme="@style/DarkBackgroundSwitch"
+            tools:ignore="RtlHardcoded,SpUsage"/>
+
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/swHasAudiobook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/has_audiobook"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            app:theme="@style/DarkBackgroundSwitch"
+            tools:ignore="RtlHardcoded,SpUsage"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/filters_header_spacing"
+            android:layout_marginTop="@dimen/filters_header_spacing">
+
+            <TextView
+                android:id="@+id/tvEpochs"
+                style="@style/SeparatorText.White"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="10dp"
+                android:text="@string/filter_epochs"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_centerVertical="true"
+                android:layout_margin="@dimen/separator_padding"
+                android:layout_toEndOf="@id/tvEpochs"
+                android:background="@color/white"/>
+
+        </RelativeLayout>
+
+        <com.moiseum.wolnelektury.view.search.components.FiltersProgressFlowLayout
+            android:id="@+id/pflEpochs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/filters_header_spacing"
+            android:layout_marginTop="@dimen/filters_header_spacing">
+
+            <TextView
+                android:id="@+id/tvKinds"
+                style="@style/SeparatorText.White"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="10dp"
+                android:text="@string/filter_kinds"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_centerVertical="true"
+                android:layout_margin="@dimen/separator_padding"
+                android:layout_toEndOf="@id/tvKinds"
+                android:background="@color/white"/>
+
+        </RelativeLayout>
+
+        <com.moiseum.wolnelektury.view.search.components.FiltersProgressFlowLayout
+            android:id="@+id/pflKinds"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/filters_header_spacing"
+            android:layout_marginTop="@dimen/filters_header_spacing">
+
+            <TextView
+                android:id="@+id/tvGenres"
+                style="@style/SeparatorText.White"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="10dp"
+                android:text="@string/filter_genres"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_centerVertical="true"
+                android:layout_margin="@dimen/separator_padding"
+                android:layout_toEndOf="@id/tvGenres"
+                android:background="@color/white"/>
+
+        </RelativeLayout>
+
+        <com.moiseum.wolnelektury.view.search.components.FiltersProgressFlowLayout
+            android:id="@+id/pflGenres"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+</ScrollView>

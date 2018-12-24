@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:ignore="HardcodedText,SpUsage,ContentDescription, RtlSymmetry">
+
+    <ImageButton
+        android:id="@+id/ibToggleList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:paddingBottom="10dp"
+        android:paddingEnd="20dp"
+        android:paddingStart="20dp"
+        android:paddingTop="10dp"
+        android:src="@drawable/toggle_selector"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/llArtistContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/ibToggleList">
+
+        <TextView
+            android:id="@+id/tvArtist"
+            style="@style/BookHeaderDarkTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Rozdział I"
+            android:textAllCaps="true"
+            android:textSize="16dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llPlayerHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingEnd="20dp"
+        android:paddingStart="20dp"
+        app:layout_constraintTop_toBottomOf="@id/llArtistContainer">
+
+        <ImageButton
+            android:id="@+id/ibPrevious"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:background="@null"
+            android:paddingBottom="@dimen/player_button_padding"
+            android:paddingEnd="10dp"
+            android:paddingTop="@dimen/player_button_padding"
+            android:src="@drawable/prev_selector"/>
+
+        <TextView
+            android:id="@+id/tvChapterTitle"
+            style="@style/BookHeaderDarkTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="3"
+            android:text="Dziady. Poema Upiór"
+            android:textSize="22dp"/>
+
+        <ImageButton
+            android:id="@+id/ibNext"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:background="@null"
+            android:paddingBottom="@dimen/player_button_padding"
+            android:paddingStart="10dp"
+            android:paddingTop="@dimen/player_button_padding"
+            android:src="@drawable/next_selector"/>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/vPlayerSeparator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/gray_dark"
+        app:layout_constraintTop_toBottomOf="@id/llPlayerHeader"/>
+
+    <TextView
+        android:id="@+id/tvCurrentProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="1:20:37"
+        android:textColor="@color/turquoise"
+        android:textSize="13dp"
+        app:layout_constraintStart_toStartOf="@+id/sbPlayerProgress"
+        app:layout_constraintTop_toBottomOf="@id/vPlayerSeparator"/>
+
+    <TextView
+        android:id="@+id/tvTotalProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="2:20:31"
+        android:textColor="@color/turquoise"
+        android:textSize="13dp"
+        app:layout_constraintEnd_toEndOf="@+id/sbPlayerProgress"
+        app:layout_constraintTop_toBottomOf="@id/vPlayerSeparator"/>
+
+    <android.support.v7.widget.AppCompatSeekBar
+        android:id="@+id/sbPlayerProgress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:maxHeight="3dp"
+        android:minHeight="2dp"
+        android:progressDrawable="@drawable/seekbar_progress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvCurrentProgress"/>
+
+    <LinearLayout
+        android:id="@+id/llPlayerButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sbPlayerProgress">
+
+        <ImageButton
+            android:id="@+id/ibRewind"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:padding="@dimen/player_button_padding"
+            android:src="@drawable/prev_con_selector"
+            tools:ignore="ContentDescription"/>
+
+        <ImageButton
+            android:id="@+id/ibPlayPause"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:padding="@dimen/player_button_padding"
+            android:src="@drawable/play_selector"
+            tools:ignore="ContentDescription"/>
+
+        <ImageButton
+            android:id="@+id/ibFastForward"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:padding="@dimen/player_button_padding"
+            android:src="@drawable/next_icon_selector"
+            tools:ignore="ContentDescription"/>
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

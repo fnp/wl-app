@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+        android:color="@color/colorPrimary">
+    <item>
+        <selector>
+            <item
+                android:drawable="@drawable/nav_item_background"
+                android:state_activated="true"/>
+            <item
+                android:drawable="@drawable/nav_item_background"
+                android:state_selected="true"/>
+            <item
+                android:drawable="@drawable/nav_item_background"
+                android:state_pressed="true"/>
+
+            <item android:drawable="@color/colorPrimaryDark"/>
+
+        </selector>
+    </item>
+</ripple>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/splash_background"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="@dimen/thumb_size"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/thumb_corners">
+
+            <ImageView
+                android:id="@+id/ivBookCover"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/list_nocover"
+                tools:ignore="ContentDescription"/>
+        </android.support.v7.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingEnd="10dp"
+            android:paddingStart="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tvBookAuthor"
+                    style="@style/ListTitleText.Black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@id/ibDeleteEbook"
+                    android:text="Juliusz Słowacki"
+                    android:textColor="@color/white"/>
+
+                <TextView
+                    android:id="@+id/tvBookTitle"
+                    style="@style/ListHeaderText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvBookAuthor"
+                    android:layout_toStartOf="@id/ibDeleteEbook"
+                    android:text="Kordian"
+                    android:textColor="@color/orange_light"/>
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/white"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/ivEbook"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    app:srcCompat="@drawable/ic_glass_mid_tint_white"
+                    tools:ignore="ContentDescription"/>
+
+                <ImageView
+                    android:id="@+id/ivAudiobook"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@id/ivEbook"
+                    app:srcCompat="@drawable/ic_speaker_mid_tint_white"
+                    tools:ignore="ContentDescription"/>
+
+            </RelativeLayout>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow>
+
+                    <TextView
+                        style="@style/ListTableTitleText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/book_epoch"
+                        android:textColor="@color/white"
+                        android:textSize="8dp"/>
+
+                    <TextView
+                        android:id="@+id/tvBookEpoch"
+                        style="@style/ListTitleText.Orange"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7"
+                        android:text="Romantyzm"/>
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        style="@style/ListTableTitleText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/book_kind"
+                        android:textColor="@color/white"
+                        android:textSize="8dp"/>
+
+                    <TextView
+                        android:id="@+id/tvBookKind"
+                        style="@style/ListTitleText.Orange"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7"/>
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        style="@style/ListTableTitleText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/book_genre"
+                        android:textColor="@color/white"
+                        android:textSize="8dp"/>
+
+                    <TextView
+                        android:id="@+id/tvBookGenre"
+                        style="@style/ListTitleText.Orange"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7"/>
+                </TableRow>
+            </TableLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlHeaderLoadingContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/splash_background"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout">
+
+        <ProgressBar
+            android:id="@+id/pbHeaderLoading"
+            style="@style/Base.Widget.AppCompat.ProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:theme="@style/CircularProgress"/>
+
+        <TextView
+            android:id="@+id/tvEmpty"
+            style="@style/BookHeaderTextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="@string/no_prapremiere_message"
+            android:textSize="14sp"
+            android:visibility="gone"/>
+
+        <ImageButton
+            android:id="@+id/ibRetry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@null"
+            android:src="@drawable/refresh_icon_light_selector"
+            android:visibility="gone"
+            tools:ignore="ContentDescription"/>
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>
+

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/clPremium"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/pra_premiere_top_bottom_padding"
+    android:paddingEnd="@dimen/pra_premiere_side_padding"
+    android:paddingStart="@dimen/pra_premiere_side_padding"
+    android:paddingTop="@dimen/pra_premiere_top_bottom_padding">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/prapremiere_info"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        tools:ignore="SpUsage"/>
+
+    <Button
+        android:id="@+id/bSupportUs"
+        style="@style/RoundedButton.Orange"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:drawableEnd="@drawable/ic_menu_star_tint_white"
+        android:drawablePadding="10dp"
+        android:text="@string/become_a_friend"
+        android:textSize="16dp"
+        tools:ignore="SpUsage"/>
+
+</LinearLayout>

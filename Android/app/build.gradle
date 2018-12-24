@@ -1,0 +1,108 @@
+apply plugin: 'com.android.application'
+apply plugin: 'io.objectbox'
+apply plugin: 'io.fabric'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.moiseum.wolnelektury"
+        minSdkVersion 19
+        targetSdkVersion 27
+        versionCode 5
+        versionName "2.0.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildToolsVersion '27.0.3'
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    dexOptions {
+        jumboMode true
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.1'
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
+    implementation 'com.android.support:design:27.1.1'
+    implementation 'com.android.support:cardview-v7:27.1.1'
+    implementation 'com.android.support:customtabs:27.1.1'
+    implementation 'com.android.support:multidex:1.0.3'
+
+    // Butterknife
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
+    // Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.7.0'
+
+    // RxJava
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.5'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+
+    // Eventbus
+    implementation 'org.greenrobot:eventbus:3.1.1'
+
+    // parceler
+    implementation 'org.parceler:parceler-api:1.1.6'
+    annotationProcessor 'org.parceler:parceler:1.1.6'
+
+    // Glide
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+
+    // FlowLayout
+    implementation 'com.nex3z:flow-layout:1.1.0'
+
+    // ShimmerEffect
+    implementation 'com.facebook.shimmer:shimmer:0.1.0@aar'
+
+    // htmltextview
+    implementation 'org.sufficientlysecure:html-textview:3.5'
+
+    // Piwik
+    implementation 'org.piwik.sdk:piwik-sdk:3.0.2'
+
+    // SecuredSharedPreferences
+    implementation 'de.adorsys.android:securestoragelibrary:1.0.2'
+
+    // HtmlTextView
+    implementation 'org.sufficientlysecure:html-textview:3.6'
+
+    // ViewPagerIndicator
+    implementation 'me.relex:circleindicator:1.2.2@aar'
+
+    // ZoomView
+    implementation 'it.sephiroth.android.library.imagezoom:imagezoom:2.3.0'
+
+    // Fabric Crashlytics
+    implementation('com.crashlytics.sdk.android:crashlytics:2.9.5@aar') {
+        transitive = true
+    }
+
+    // FCM
+    implementation 'com.google.firebase:firebase-core:16.0.3'
+    implementation 'com.google.firebase:firebase-messaging:17.3.0'
+
+    // Tests
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    // Folio Reader
+    implementation project(path: ':folioreader')
+}
+
+apply plugin: 'com.google.gms.google-services'

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:animateLayoutChanges="true"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rlFiltersContainer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/book_search_filters_height"
+        android:background="@color/turquoise_dark"
+        android:visibility="gone">
+
+        <ImageButton
+            android:id="@+id/ibClearFilters"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/close_filters_selector"
+            android:padding="12dp"
+            android:src="@drawable/close_small_dark_tint"
+            tools:ignore="ContentDescription"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvFilters"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toStartOf="@id/ibClearFilters"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:animateLayoutChanges="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.moiseum.wolnelektury.components.ProgressRecyclerView
+            android:id="@+id/rvBooks"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <ProgressBar
+            android:id="@+id/pbLoadMore"
+            style="@style/Base.Widget.AppCompat.ProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/btnReloadMore"
+            style="@style/RoundedButton.WhiteBorder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:text="@string/load_again"
+            android:visibility="gone"/>
+    </RelativeLayout>
+
+</LinearLayout>

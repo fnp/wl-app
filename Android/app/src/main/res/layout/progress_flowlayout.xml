@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:background="@android:color/transparent">
+
+    <com.nex3z.flowlayout.FlowLayout
+        android:id="@+id/flList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:visibility="gone"
+        app:flChildSpacing="@dimen/filter_checkbox_spacing"
+        app:flChildSpacingForLastRow="align"
+        app:flRowSpacing="8dp"/>
+
+    <ProgressBar
+        android:id="@+id/pbLoading"
+        style="@style/Base.Widget.AppCompat.ProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="@dimen/flowlayout_progress_margin"
+        android:layout_marginTop="@dimen/flowlayout_progress_margin"
+        android:theme="@style/CircularProgress"/>
+
+    <ImageButton
+        android:id="@+id/ibRetry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="@dimen/flowlayout_progress_margin"
+        android:layout_marginTop="@dimen/flowlayout_progress_margin"
+        android:background="@null"
+        android:src="@drawable/refresh_icon_light_selector"
+        android:visibility="gone"
+        tools:ignore="ContentDescription"/>
+
+    <TextView
+        android:id="@+id/tvEmpty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="10dp"
+        android:text="@string/no_results"
+        android:textColor="@color/gray_dark"
+        android:textSize="14dp"
+        android:visibility="gone"
+        tools:ignore="SpUsage"/>
+
+</RelativeLayout>

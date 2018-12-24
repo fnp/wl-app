@@ -1,0 +1,39 @@
+apply plugin: 'java'
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'readium'
+
+    publishedGroupId = 'org.readium'
+    libraryName = 'r2-server'
+    artifact = 'r2-server'
+
+    libraryDescription = 'Library takes an data from fetcher as an input and exposes in HTTP'
+
+    siteUrl = 'https://github.com/readium/r2-streamer-java'
+    gitUrl = 'https://github.com/readium/r2-streamer-java.git'
+
+    libraryVersion = '0.1.0'
+
+    developerId = 'mobisystech'
+    developerName = 'CodeToArt'
+    developerEmail = 'mahavir@codetoart.com'
+
+    licenseName = 'FreeBSD License'
+    licenseUrl = 'https://en.wikipedia.org/wiki/FreeBSD_Documentation_License#License'
+    allLicenses = ["FreeBSD"]
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'org.nanohttpd:nanohttpd:2.3.1'
+    compile 'org.nanohttpd:nanohttpd-nanolets:2.3.1'
+    implementation project(':r2-streamer:r2-fetcher')
+    implementation project(':r2-streamer:r2-parser')
+}
+
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"
+
+apply from: '../bintray/installv1.gradle'
+apply from: '../bintray/bintrayv1.gradle'

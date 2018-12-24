@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="20dp">
+
+        <RelativeLayout
+            android:id="@+id/rlBecomeAFriend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/splash_background"
+            android:padding="10dp">
+
+            <Button
+                android:id="@+id/btnBecomeAFriend"
+                style="@style/RoundedButton.Orange"
+                android:layout_width="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:drawableEnd="@drawable/ic_arrow_right_white_24dp"
+                android:text="@string/become_a_friend"
+                android:textSize="10dp"
+                tools:ignore="SpUsage"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_centerVertical="true"
+                android:layout_margin="@dimen/separator_padding"
+                android:layout_toStartOf="@id/btnBecomeAFriend"
+                android:background="@color/orange_light"/>
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/vBecomeAFriendSeparator"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/splash_background"/>
+
+        <include
+            android:id="@+id/libraryHeader"
+            layout="@layout/library_header"/>
+
+        <RelativeLayout
+            android:id="@+id/rlReadingNowContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tvNowReading"
+                style="@style/SeparatorText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="10dp"
+                android:text="@string/library_now_reading"/>
+
+            <Button
+                android:id="@+id/btnNowReadingSeeAll"
+                style="@style/FlatButton.Separator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:text="@string/see_all"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_centerVertical="true"
+                android:layout_margin="@dimen/separator_padding"
+                android:layout_toEndOf="@id/tvNowReading"
+                android:layout_toStartOf="@id/btnNowReadingSeeAll"
+                android:background="@color/gray_dark"/>
+
+        </RelativeLayout>
+
+        <com.moiseum.wolnelektury.components.ProgressRecyclerView
+            android:id="@+id/rvNowReading"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:visibility="gone"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvNewest"
+                style="@style/SeparatorText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="10dp"
+                android:text="@string/library_newest"/>
+
+            <Button
+                android:id="@+id/btnNewestSeeAll"
+                style="@style/FlatButton.Separator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:text="@string/see_all"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_centerVertical="true"
+                android:layout_margin="@dimen/separator_padding"
+                android:layout_toEndOf="@id/tvNewest"
+                android:layout_toStartOf="@id/btnNewestSeeAll"
+                android:background="@color/gray_dark"/>
+
+        </RelativeLayout>
+
+        <com.moiseum.wolnelektury.components.ProgressRecyclerView
+            android:id="@+id/rvNewest"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvRecommended"
+                style="@style/SeparatorText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="10dp"
+                android:text="@string/library_recommended"/>
+
+            <Button
+                android:id="@+id/btnRecommendedSeeAll"
+                style="@style/FlatButton.Separator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:text="@string/see_all"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_centerVertical="true"
+                android:layout_margin="@dimen/separator_padding"
+                android:layout_toEndOf="@id/tvRecommended"
+                android:layout_toStartOf="@id/btnRecommendedSeeAll"
+                android:background="@color/gray_dark"/>
+
+        </RelativeLayout>
+
+        <com.moiseum.wolnelektury.components.ProgressRecyclerView
+            android:id="@+id/rvRecommended"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"/>
+
+        <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/tvMyCollection"-->
+        <!--style="@style/SeparatorText"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_margin="10dp"-->
+        <!--android:text="@string/library_my_collection"/>-->
+
+        <!--<Button-->
+        <!--android:id="@+id/btnMyCollectionSeeAll"-->
+        <!--style="@style/FlatButton.Separator"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentEnd="true"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:text="@string/see_all"/>-->
+
+        <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="1px"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_margin="@dimen/separator_padding"-->
+        <!--android:layout_toEndOf="@id/tvMyCollection"-->
+        <!--android:layout_toStartOf="@id/btnMyCollectionSeeAll"-->
+        <!--android:background="@color/gray_dark"/>-->
+
+        <!--</RelativeLayout>-->
+
+        <!--<com.moiseum.wolnelektury.components.ProgressRecyclerView-->
+        <!--android:id="@+id/rvMyCollection"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="200dp"/>-->
+
+
+    </LinearLayout>
+
+</ScrollView>

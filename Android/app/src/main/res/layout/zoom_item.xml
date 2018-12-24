@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimary">
+
+    <it.sephiroth.android.library.imagezoom.ImageViewTouch
+        android:id="@+id/ivPointPhoto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="ContentDescription"/>
+
+    <ProgressBar
+        android:id="@+id/pbLoading"
+        style="@style/Base.Widget.AppCompat.ProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:theme="@style/CircularProgress"/>
+
+    <TextView
+        android:id="@+id/tvLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pbLoading"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:text="@string/loading"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        tools:ignore="SpUsage"/>
+
+    <Button
+        android:id="@+id/btnRetry"
+        style="@style/RoundedButton.WhiteBorder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:text="@string/load_again"
+        android:visibility="gone"/>
+
+</RelativeLayout>

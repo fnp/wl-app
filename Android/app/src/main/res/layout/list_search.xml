@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:gravity="center_vertical"
+              android:orientation="horizontal"
+              android:padding="10dp">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="@dimen/thumb_size"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/thumb_corners">
+
+        <ImageView
+            android:id="@+id/ivBookCover"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/list_nocover"
+            tools:ignore="ContentDescription"/>
+    </android.support.v7.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/ibDeleteEbook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:padding="10dp"
+                android:src="@drawable/delete_icon_selector"
+                android:visibility="gone"
+                tools:ignore="ContentDescription"/>
+
+            <TextView
+                android:id="@+id/tvBookAuthor"
+                style="@style/ListTitleText.Black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@id/ibDeleteEbook"
+                android:text="Juliusz Słowacki"/>
+
+            <TextView
+                android:id="@+id/tvBookTitle"
+                style="@style/ListHeaderText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvBookAuthor"
+                android:layout_marginEnd="1dp"
+                android:layout_toStartOf="@id/ibDeleteEbook"
+                android:text="Kordian"/>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/gray_dark"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/ivEbook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_glass_mid"
+                android:tint="@color/gray_very_dark"
+                tools:ignore="ContentDescription"/>
+
+            <TextView
+                android:id="@+id/tvEbookReaden"
+                style="@style/ListTableTitleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/list_search_read_listen_status_margins"
+                android:text="Przeczytano 50%"
+                android:textAllCaps="false"
+                tools:ignore="ContentDescription"/>
+
+            <ImageView
+                android:id="@+id/ivAudioBook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/list_search_read_listen_status_margins"
+                android:src="@drawable/ic_speaker_mid"
+                android:tint="@color/gray_very_dark"
+                tools:ignore="ContentDescription"/>
+
+            <TextView
+                android:id="@+id/tvAudioBookReaden"
+                style="@style/ListTableTitleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/list_search_read_listen_status_margins"
+                android:text="Odsłuchano 50%"
+                android:textAllCaps="false"
+                tools:ignore="ContentDescription"/>
+        </LinearLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow>
+
+                <TextView
+                    style="@style/ListTableTitleText"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.6"
+                    android:text="@string/book_epoch"/>
+
+                <TextView
+                    android:id="@+id/tvBookEpoch"
+                    style="@style/ListTitleText.Turquoise"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:text="Romantyzm"/>
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    style="@style/ListTableTitleText"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.6"
+                    android:text="@string/book_kind"/>
+
+                <TextView
+                    android:id="@+id/tvBookKind"
+                    style="@style/ListTitleText.Turquoise"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"/>
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    style="@style/ListTableTitleText"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.6"
+                    android:text="@string/book_genre"/>
+
+                <TextView
+                    android:id="@+id/tvBookGenre"
+                    style="@style/ListTitleText.Turquoise"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"/>
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/book_header_height"
+                android:animateLayoutChanges="true">
+
+    <ImageView
+        android:id="@+id/ivCoverBackground"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/book_header_height"
+        android:contentDescription="@string/app_name"
+        android:scaleType="centerCrop"/>
+
+    <View
+        android:id="@+id/vCoverOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/book_header_height"/>
+
+    <ImageView
+        android:id="@+id/ivCover"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="@dimen/book_header_top"
+        android:adjustViewBounds="true"
+        android:src="@drawable/list_nocover"
+        tools:ignore="ContentDescription,RtlHardcoded"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="@dimen/book_header_top"
+        android:layout_toStartOf="@id/ivCover"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <TextView
+            android:id="@+id/tvBookAuthor"
+            style="@style/BookHeaderTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"/>
+
+        <TextView
+            android:id="@+id/tvBookTitle"
+            style="@style/BookHeaderTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textSize="28dp"
+            tools:ignore="SpUsage"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlHeaderLoadingContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/colorPrimary">
+
+        <ProgressBar
+            android:id="@+id/pbHeaderLoading"
+            style="@style/Base.Widget.AppCompat.ProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:theme="@style/CircularProgress"/>
+
+        <ImageButton
+            android:id="@+id/ibRetry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@null"
+            android:src="@drawable/refresh_icon_light_selector"
+            android:visibility="gone"
+            tools:ignore="ContentDescription"/>
+    </RelativeLayout>
+
+</RelativeLayout>

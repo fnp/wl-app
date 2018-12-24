@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#206F76</color>
+    <color name="colorPrimaryDark">#19555B</color>
+    <color name="colorAccent">#19555B</color>
+
+    <color name="turquoise">#206F76</color>
+    <color name="turquoise_dark">#19555B</color>
+    <color name="turquoise_light">#349fa8</color>
+    <color name="white">#ffffff</color>
+    <color name="gray_dark">#414141</color>
+    <color name="gray_very_dark">#525252</color>
+    <color name="orange">#db4b16</color>
+    <color name="orange_light">#F49509</color>
+    <color name="orange_overlay">#80db4b16</color>
+    <color name="red_dark">#9e2b00</color>
+    <color name="placeholder_gray">#eeeeee</color>
+    <color name="audiobook_gray">#118990</color>
+    <color name="splash_background">#018189</color>
+</resources>

@@ -1,0 +1,134 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:1266212408658120333",
+      "lastPropertyId": "26:4213249825017494295",
+      "name": "BookModel",
+      "properties": [
+        {
+          "id": "1:4875450393257016076",
+          "name": "localId"
+        },
+        {
+          "id": "2:6442526149769234951",
+          "name": "kind"
+        },
+        {
+          "id": "3:6139716336211719332",
+          "name": "author"
+        },
+        {
+          "id": "4:9122866387478688597",
+          "name": "url"
+        },
+        {
+          "id": "5:2911729206207838262",
+          "name": "title"
+        },
+        {
+          "id": "6:6733284022068068913",
+          "name": "cover"
+        },
+        {
+          "id": "7:2855699566794978818",
+          "name": "epoch"
+        },
+        {
+          "id": "8:3155585116505368178",
+          "name": "href"
+        },
+        {
+          "id": "9:5758122160014138064",
+          "name": "genre"
+        },
+        {
+          "id": "10:4565534831058503932",
+          "name": "slug"
+        },
+        {
+          "id": "11:2010568180259287879",
+          "name": "coverThumb"
+        },
+        {
+          "id": "14:1346463204325727422",
+          "name": "key"
+        },
+        {
+          "id": "15:7680817761521283170",
+          "name": "hasAudio"
+        },
+        {
+          "id": "18:147986086857220058",
+          "name": "currentChapter"
+        },
+        {
+          "id": "19:8713447497975671246",
+          "name": "totalChapters"
+        },
+        {
+          "id": "20:8513709726333847808",
+          "name": "ebookFileUrl"
+        },
+        {
+          "id": "21:4938160215891531703",
+          "name": "currentAudioChapter"
+        },
+        {
+          "id": "22:4218282539034900953",
+          "name": "totalAudioChapters"
+        },
+        {
+          "id": "23:4885260030438873466",
+          "name": "audioFileUrls"
+        },
+        {
+          "id": "24:6566362314372860102",
+          "name": "coverColor"
+        },
+        {
+          "id": "25:782192741435330189",
+          "name": "liked"
+        },
+        {
+          "id": "26:4213249825017494295",
+          "name": "sortedKey"
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "2:1504498481041860157",
+  "lastIndexId": "1:6468504721746553676",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 4,
+  "modelVersionParserMinimum": 4,
+  "retiredEntityUids": [
+    1504498481041860157
+  ],
+  "retiredIndexUids": [
+    6468504721746553676
+  ],
+  "retiredPropertyUids": [
+    6803086463971496152,
+    3080154473130007804,
+    1621280139326722999,
+    2103818903142647350,
+    6713758539027593090,
+    2491180996489637688,
+    4042232117924105743,
+    5735503626971019687,
+    8275039331603704005,
+    2881981269631671029,
+    8276445823965894226,
+    3807782664163355511,
+    8710097352585536243,
+    8415046264594345414,
+    1929729267744483000
+  ],
+  "retiredRelationUids": [],
+  "version": 1
+}

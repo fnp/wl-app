@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ProgressRecyclerView">
+        <attr name="emptyText" format="string"/>
+    </declare-styleable>
+    <declare-styleable name="FiltersProgressFlowLayout">
+        <attr name="emptyLayoutText" format="string"/>
+    </declare-styleable>
+    <declare-styleable name="ProgressDownloadButton">
+        <attr name="text_initial" format="string"/>
+        <attr name="text_downloaded" format="string"/>
+        <attr name="text_color" format="color"/>
+        <attr name="text_inverted_color" format="color"/>
+        <attr name="text_size" format="dimension"/>
+        <attr name="border_size" format="dimension"/>
+        <attr name="corner_radius" format="dimension"/>
+        <attr name="drawable" format="integer" />
+    </declare-styleable>
+</resources>

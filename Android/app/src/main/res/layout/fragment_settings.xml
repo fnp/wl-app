@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimaryDark">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:app="http://schemas.android.com/apk/res-auto"
+                  xmlns:tools="http://schemas.android.com/tools"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/settings_bottom_padding"
+            android:paddingEnd="@dimen/settings_padding"
+            android:paddingStart="@dimen/settings_padding"
+            android:paddingTop="@dimen/settings_padding">
+
+            <android.support.v7.widget.SwitchCompat
+                android:id="@+id/swNotifications"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/settings_notifications"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/settings_text_size"
+                app:theme="@style/DarkBackgroundSwitch"
+                tools:ignore="RtlHardcoded,SpUsage"/>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/first_separator"
+            style="@style/SettingsSeparator"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/settings_bottom_padding"
+            android:paddingEnd="@dimen/settings_padding"
+            android:paddingStart="@dimen/settings_padding"
+            android:paddingTop="@dimen/settings_bottom_padding">
+
+            <TextView
+                android:id="@+id/tv_subscribtion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="15dp"
+                android:layout_toStartOf="@id/tvState"
+                android:text="@string/subscribtion_state"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/settings_text_size"/>
+
+            <TextView
+                android:id="@+id/tvState"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:text="@string/inactive"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/settings_text_size"/>
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/second_separator"
+            style="@style/SettingsSeparator"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/settings_bottom_padding"
+            android:paddingEnd="@dimen/settings_padding"
+            android:paddingStart="@dimen/settings_padding"
+            android:paddingTop="@dimen/settings_bottom_padding">
+
+            <TextView
+                android:id="@+id/tv_delete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="15dp"
+                android:layout_toStartOf="@id/btnDelete"
+                android:text="@string/delete_files"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/settings_text_size"/>
+
+            <Button
+                android:id="@+id/btnDelete"
+                style="@style/RoundedButton.WhiteBorder"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_weight="0"
+                android:text="@string/delete"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnBecomeAFriend"
+        style="@style/RoundedButton.Orange"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"
+        android:text="@string/become_a_friend"/>
+
+</RelativeLayout>

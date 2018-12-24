@@ -1,0 +1,17 @@
+*.iml
+.gradle
+/Android/local.properties
+/Android/.idea
+.DS_Store
+/Android/build
+/Android/folioreader/build
+/Android/webViewMarker/build
+/Android*.iml
+/Android/folioreader/*.iml
+/Android/webViewMarker/*.iml
+/Android/captures
+.externalNativeBuild
+/Androidapp/release/*
+/Android/r2-streamer/r2-fetcher/build
+/Android/r2-streamer/r2-parser/build
+/Android/r2-streamer/r2-server/build
