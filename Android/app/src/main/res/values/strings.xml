@@ -77,8 +77,7 @@ PIT-28). W zeznaniu należy podać nazwę: Fundacja Nowoczesna Polska
 oraz numer z Krajowego Rejestru Sądowego (KRS) 0000070056.</string>
     <string name="support_us_text"><![CDATA[Przekaż darowiznę na Wolne Lektury! Każda wpłacona kwota zostanie
 przeznaczona na rozwój zasobów naszej biblioteki. Więcej informacji
-znajdziesz na <a href="https://wolnelektury.pl/info/wesprzyj-nas/">naszej stronie</a>.<br/><br/>
-         Pomóż uwolnić konkretną książkę, wspierając zbiórkę na <a href="https://wolnelektury.pl/wesprzyj/lektura/">tej stronie</a>.]]></string>
+znajdziesz na <a href="https://wolnelektury.pl/info/wesprzyj-nas/">naszej stronie</a>.]]></string>
     <string name="login_request_token_failed">Pierwsza faza logowania nie powiodła się. Spróbuj ponownie.</string>
     <string name="login_access_token_failed">Druga faza logowania nie powiodła się. Spróbuj ponownie.</string>
     <string name="menu_login">Zaloguj się</string>
@@ -92,7 +91,7 @@ znajdziesz na <a href="https://wolnelektury.pl/info/wesprzyj-nas/">naszej stroni
     <string name="nav_favourites">Ulubione</string>
     <string name="nav_audiobooks">Audiobooki</string>
     <string name="audiobook">Audiobook</string>
-    <string name="has_audiobook">Audiobook</string>
+    <string name="has_audiobook">Audiobooki</string>
     <string name="nav_downloaded">Pobrane</string>
     <string name="become_a_friend">Zostań przyjacielem</string>
     <string name="reading_progress">Przeczytano %d%%</string>

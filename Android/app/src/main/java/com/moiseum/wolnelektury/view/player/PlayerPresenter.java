@@ -8,7 +8,6 @@ import android.support.v4.media.MediaMetadataCompat;
 import android.support.v4.media.session.MediaControllerCompat;
 import android.support.v4.media.session.MediaSessionCompat;
 import android.support.v4.media.session.PlaybackStateCompat;
-import android.util.Log;
 
 import com.moiseum.wolnelektury.base.WLApplication;
 import com.moiseum.wolnelektury.base.mvp.FragmentPresenter;
@@ -29,6 +28,7 @@ public class PlayerPresenter extends FragmentPresenter<PlayerView> {
 
 	private final BookDetailsModel book;
 	private final BookModel storedBook;
+	private final String bookSlug;
 
 	private final BookStorage storage = WLApplication.getInstance().getBookStorage();
 	private MediaBrowserHelper mMediaBrowserHelper;
@@ -47,11 +47,17 @@ public class PlayerPresenter extends FragmentPresenter<PlayerView> {
 		protected void onChildrenLoaded(@NonNull String parentId,
 		                                @NonNull List<MediaBrowserCompat.MediaItem> children) {
 			super.onChildrenLoaded(parentId, children);
+			AudiobookLibrary.createAudiobookMetadata(book, bookSlug);
+
+			if (isSamePlaylist(children, AudiobookLibrary.getMediaItems())) {
+				// Do not modify the playlist when entering the same audiobook
+				return;
+			}
 
 			final MediaControllerCompat mediaController = getMediaController();
 			mediaController.getTransportControls().sendCustomAction(AudiobookService.ACTION_CLEAR_PLAYLIST, null);
 
-			AudiobookLibrary.createAudiobookMetadata(book);
+
 			for (final MediaBrowserCompat.MediaItem mediaItem : AudiobookLibrary.getMediaItems()) {
 				mediaController.addQueueItem(mediaItem.getDescription());
 			}
@@ -62,6 +68,20 @@ public class PlayerPresenter extends FragmentPresenter<PlayerView> {
 				mediaController.getTransportControls().skipToQueueItem(storedBook.getCurrentAudioChapter());
 				mediaController.getTransportControls().pause();
 			}
+		}
+
+		private boolean isSamePlaylist(@NonNull List<MediaBrowserCompat.MediaItem> current, @NonNull List<MediaBrowserCompat.MediaItem> oncoming) {
+			if (current.size() != oncoming.size()) {
+				return false;
+			}
+			for (int i = 0; i < current.size(); i++) {
+				MediaBrowserCompat.MediaItem currentItem = current.get(i);
+				MediaBrowserCompat.MediaItem oncomingItem = oncoming.get(i);
+				if (!currentItem.getDescription().getMediaId().equals(oncomingItem.getDescription().getMediaId())) {
+					return false;
+				}
+			}
+			return true;
 		}
 	}
 
@@ -137,6 +157,8 @@ public class PlayerPresenter extends FragmentPresenter<PlayerView> {
 		super(view);
 		this.book = book;
 		this.storedBook = storage.find(slug);
+		this.bookSlug = slug;
+
 		mMediaBrowserHelper = new MediaBrowserConnection(context);
 		mMediaBrowserHelper.registerCallback(new PlayerMediaControllerCallback());
 	}

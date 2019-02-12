@@ -213,6 +213,10 @@ html.nightMode {
     color: #848484 !important;
 }
 
+.nightMode a {
+	color: white;
+}
+
 html.nightMode .highlight_yellow {background:rgba(255, 235, 107, 0.9)}
 html.nightMode .highlight_green {background:rgba(192, 237, 114, 0.9)}
 html.nightMode .highlight_blue {background:rgba(173, 216, 255, 0.9)}

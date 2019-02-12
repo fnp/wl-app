@@ -51,6 +51,7 @@ class BookPresenter extends FragmentPresenter<BookView> {
 		super(view);
 		this.bookSlug = slug;
 		this.bookType = type;
+		this.storedBook = storage.find(bookSlug);
 	}
 
 	@Override
@@ -163,7 +164,7 @@ class BookPresenter extends FragmentPresenter<BookView> {
 				.observeOn(AndroidSchedulers.mainThread())
 				.subscribe(
 						() -> getView().changeDownloadButtonState(ProgressDownloadButton.ProgressDownloadButtonState.STATE_INITIAL, false),
-						error -> { }
+						error -> Log.e(TAG, "Ebook deletion failed: " + error.getMessage(), error)
 				)
 		);
 	}
@@ -175,7 +176,7 @@ class BookPresenter extends FragmentPresenter<BookView> {
 				.observeOn(AndroidSchedulers.mainThread())
 				.subscribe(
 						() -> getView().changeDownloadButtonState(ProgressDownloadButton.ProgressDownloadButtonState.STATE_INITIAL, true),
-						error -> { }
+						error -> Log.e(TAG, "Audiobook deletion failed: " + error.getMessage(), error)
 				)
 		);
 	}
@@ -211,18 +212,18 @@ class BookPresenter extends FragmentPresenter<BookView> {
 	// ------------------------------------------------------------------------------------------------------------------------------------------
 
 	private void updateStoredBookAfterDeletion() {
-		if (!storedBook.isAudioDownloaded()) {
-			storage.remove(storedBook.getSlug(), true);
-			storedBook = null;
-			return;
-		}
-
 		AppUtil.removeBookState(WLApplication.getInstance().getApplicationContext(), storedBook.getEbookName());
 		storedBook.setEbookName(null);
 		storedBook.setEbookFileUrl(null);
 		storedBook.setCurrentChapter(0);
 		storedBook.setTotalChapters(0);
-		storage.update(storedBook);
+
+		if (!storedBook.isAudioDownloaded()) {
+			storage.remove(storedBook.getSlug(), true);
+			storedBook = null;
+		} else {
+			storage.update(storedBook);
+		}
 	}
 
 	private void updateStoredAudiobookAfterDeletion() {

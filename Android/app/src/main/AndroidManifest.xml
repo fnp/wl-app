@@ -25,7 +25,6 @@
         </activity>
         <activity
             android:name=".view.main.MainActivity"
-            android:launchMode="singleInstance"
             android:screenOrientation="userPortrait">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>

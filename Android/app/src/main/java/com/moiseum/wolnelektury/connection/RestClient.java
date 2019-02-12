@@ -52,7 +52,7 @@ public class RestClient {
 		if (currentToken != null) {
 			oAuthInterceptor.setToken(currentToken.getToken(), currentToken.getTokenSecret());
 		}
-		UnauthorizedInterceptor unauthorizedInterceptor = new UnauthorizedInterceptor();
+//		UnauthorizedInterceptor unauthorizedInterceptor = new UnauthorizedInterceptor();
 		NewApiInterceptor newApiInterceptor = new NewApiInterceptor();
 
 		GsonBuilder gsonBuilder = new GsonBuilder();
@@ -67,7 +67,7 @@ public class RestClient {
 		OkHttpClient.Builder builder = new OkHttpClient.Builder();
 		builder.interceptors().add(newApiInterceptor);
 		builder.interceptors().add(oAuthInterceptor);
-		builder.interceptors().add(unauthorizedInterceptor);
+//		builder.interceptors().add(unauthorizedInterceptor);
 		if (BuildConfig.DEBUG) {
 			HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
 			loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.HEADERS);

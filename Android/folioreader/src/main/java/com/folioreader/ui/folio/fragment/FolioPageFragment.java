@@ -24,6 +24,7 @@ import android.webkit.JsResult;
 import android.webkit.WebChromeClient;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebResourceResponse;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.TextView;
@@ -347,6 +348,7 @@ public class FolioPageFragment extends Fragment implements HtmlTaskCallback, Med
         //TODO save last media overlay item
     }
 
+    @SuppressLint("SetJavaScriptEnabled")
     private void initWebView() {
         mWebview = (ObservableWebView) mRootView.findViewById(R.id.contentWebView);
         mWebview.setSeekBarListener(FolioPageFragment.this);
@@ -373,6 +375,11 @@ public class FolioPageFragment extends Fragment implements HtmlTaskCallback, Med
         mWebview.getSettings().setJavaScriptEnabled(true);
         mWebview.setVerticalScrollBarEnabled(false);
         mWebview.getSettings().setAllowFileAccess(true);
+        mWebview.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
+        mWebview.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
+        mWebview.getSettings().setDomStorageEnabled(true);
+        mWebview.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.NARROW_COLUMNS);
+        mWebview.setLayerType(View.LAYER_TYPE_HARDWARE, null);
 
         mWebview.setHorizontalScrollBarEnabled(false);
 
@@ -388,7 +395,6 @@ public class FolioPageFragment extends Fragment implements HtmlTaskCallback, Med
                 }
                 mScrollSeekbar.setProgressAndThumb(percent);
                 updatePagesLeftText(percent);
-
             }
         });
 
@@ -396,8 +402,9 @@ public class FolioPageFragment extends Fragment implements HtmlTaskCallback, Med
             @Override
             public void onPageFinished(WebView view, String url) {
                 if (isAdded()) {
-                    if (mAnchorId != null)
+                    if (mAnchorId != null) {
                         view.loadUrl("javascript:document.getElementById(\"" + mAnchorId + "\").scrollIntoView()");
+                    }
                     view.loadUrl("javascript:alert(getReadingTime())");
                     if (!hasMediaOverlay) {
                         view.loadUrl("javascript:alert(wrappingSentencesWithinPTags())");
@@ -405,21 +412,19 @@ public class FolioPageFragment extends Fragment implements HtmlTaskCallback, Med
                     view.loadUrl(String.format(getString(R.string.setmediaoverlaystyle),
                             HighlightImpl.HighlightStyle.classForStyle(
                                     HighlightImpl.HighlightStyle.Normal)));
-                    if (isCurrentFragment()) {
-                        setWebViewPosition(AppUtil.getPreviousBookStateWebViewPosition(getActivity(), mBookTitle));
-                    } else if (mIsPageReloaded) {
-                        setWebViewPosition(mLastWebviewScrollpos);
-                        mIsPageReloaded = false;
-                    }
                     String rangy = HighlightUtil.generateRangyString(getPageName());
                     FolioPageFragment.this.rangy = rangy;
                     if (!rangy.isEmpty()) {
                         loadRangy(view, rangy);
                     }
 
+                    if (isCurrentFragment()) {
+                        setWebViewPosition(AppUtil.getPreviousBookStateWebViewPosition(getActivity(), mBookTitle));
+                    } else if (mIsPageReloaded) {
+                        setWebViewPosition(mLastWebviewScrollpos);
+                        mIsPageReloaded = false;
+                    }
                     scrollToHighlightId();
-
-
                 }
             }
 
@@ -630,11 +635,8 @@ public class FolioPageFragment extends Fragment implements HtmlTaskCallback, Med
                     (int) Math.ceil((double) mWebview.getContentHeightVal()
                             / mWebview.getWebViewHeight());
             int pagesRemaining = totalPages - currentPage;
-            String pagesRemainingStrFormat =
-                    pagesRemaining > 1 ?
-                            getString(R.string.pages_left) : getString(R.string.page_left);
-            String pagesRemainingStr = String.format(Locale.US,
-                    pagesRemainingStrFormat, pagesRemaining);
+            String pagesRemainingStrFormat = getResources().getQuantityString(R.plurals.pages_left, pagesRemaining);
+            String pagesRemainingStr = String.format(Locale.US, pagesRemainingStrFormat, pagesRemaining);
 
             int minutesRemaining =
                     (int) Math.ceil((double) (pagesRemaining * mTotalMinutes) / totalPages);
@@ -939,14 +941,14 @@ public class FolioPageFragment extends Fragment implements HtmlTaskCallback, Med
     }
 
     public void setWebViewPosition(final int position) {
-        mWebview.post(new Runnable() {
+        mWebview.postDelayed(new Runnable() {
             @Override
             public void run() {
                 if (isAdded()) {
                     mWebview.scrollTo(0, position);
                 }
             }
-        });
+        }, 1000);
     }
 
     @Override

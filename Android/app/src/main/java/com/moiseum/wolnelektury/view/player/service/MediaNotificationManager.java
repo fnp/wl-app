@@ -37,8 +37,11 @@ import android.support.v4.media.session.PlaybackStateCompat;
 import android.util.Log;
 
 import com.bumptech.glide.Glide;
+import com.google.gson.Gson;
 import com.moiseum.wolnelektury.R;
+import com.moiseum.wolnelektury.connection.models.BookDetailsModel;
 import com.moiseum.wolnelektury.view.main.MainActivity;
+import com.moiseum.wolnelektury.view.player.PlayerActivity;
 
 import java.util.concurrent.ExecutionException;
 
@@ -56,6 +59,7 @@ public class MediaNotificationManager {
     private static final int REQUEST_CODE = 501;
 
     private final AudiobookService mService;
+    private final Gson gson = new Gson();
 
     private final NotificationCompat.Action mPlayAction;
     private final NotificationCompat.Action mPauseAction;
@@ -111,20 +115,21 @@ public class MediaNotificationManager {
         return mNotificationManager;
     }
 
-    public Notification getNotification(MediaMetadataCompat metadata,
-                                        @NonNull PlaybackStateCompat state,
-                                        MediaSessionCompat.Token token) {
+    public Notification getNotification(MediaMetadataCompat metadata, @NonNull PlaybackStateCompat state, MediaSessionCompat.Token token) {
         boolean isPlaying = state.getState() == PlaybackStateCompat.STATE_PLAYING;
         MediaDescriptionCompat description = metadata.getDescription();
-        NotificationCompat.Builder builder =
-                buildNotification(state, token, isPlaying, description);
+        BookDetailsModel detailsModel = gson.fromJson(metadata.getString(AudiobookLibrary.METADATA_BOOK_DETAILS), BookDetailsModel.class);
+        String slug = metadata.getString(AudiobookLibrary.METADATA_BOOK_SLUG);
+        NotificationCompat.Builder builder = buildNotification(state, token, isPlaying, description, detailsModel, slug);
         return builder.build();
     }
 
     private NotificationCompat.Builder buildNotification(@NonNull PlaybackStateCompat state,
                                                          MediaSessionCompat.Token token,
                                                          boolean isPlaying,
-                                                         MediaDescriptionCompat description) {
+                                                         MediaDescriptionCompat description,
+                                                         BookDetailsModel detailsModel,
+                                                         String slug) {
 
         // Create the (mandatory) notification channel when running on Android Oreo.
         if (isAndroidOOrHigher()) {
@@ -145,7 +150,7 @@ public class MediaNotificationManager {
                 .setColor(ContextCompat.getColor(mService, R.color.colorAccent))
                 .setSmallIcon(R.drawable.ic_notification_player)
                 // Pending intent that is fired when user clicks on notification.
-                .setContentIntent(createContentIntent())
+                .setContentIntent(createContentIntent(detailsModel, slug))
                 // Title - Usually Song name.
                 .setContentTitle(description.getTitle())
                 // Subtitle - Usually Artist name.
@@ -203,11 +208,10 @@ public class MediaNotificationManager {
         return Build.VERSION.SDK_INT >= Build.VERSION_CODES.O;
     }
 
-    private PendingIntent createContentIntent() {
-        Intent openUI = new Intent(mService, MainActivity.class);
-        openUI.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        return PendingIntent.getActivity(
-                mService, REQUEST_CODE, openUI, PendingIntent.FLAG_CANCEL_CURRENT);
+    private PendingIntent createContentIntent(BookDetailsModel detailsModel, String slug) {
+        PlayerActivity.PlayerIntent intent = new PlayerActivity.PlayerIntent(detailsModel, slug, mService);
+        intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        return PendingIntent.getActivity(mService, REQUEST_CODE, intent, PendingIntent.FLAG_CANCEL_CURRENT);
     }
 
 }

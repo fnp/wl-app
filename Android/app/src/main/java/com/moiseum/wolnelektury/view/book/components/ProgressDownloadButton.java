@@ -277,6 +277,10 @@ public class ProgressDownloadButton extends View {
 	}
 
 	public void setState(ProgressDownloadButtonState state) {
+		if (state == ProgressDownloadButtonState.STATE_INITIAL) {
+			attributes.currentReadPosition = 0;
+			attributes.totalReadCount = 0;
+		}
 		this.currentState = state;
 		this.setEnabled(state.isEnabled());
 		invalidate();

@@ -310,6 +310,6 @@ public enum NavigationElement {
 	public abstract boolean requiresLogin();
 
 	public static List<NavigationElement> valuesForNavigation() {
-		return Arrays.asList(SUPPORT_US, LIBRARY, SEPARATOR, PREMIUM, SEARCH, AUDIOBOOKS, NOW_READING, FAVOURITES, COMPLETED, SEPARATOR, DOWNLOADED, SEPARATOR, NEWS, SETTINGS, ABOUT);
+		return Arrays.asList(/*SUPPORT_US, */LIBRARY, SEPARATOR,/*PREMIUM, */SEARCH, AUDIOBOOKS, NOW_READING, FAVOURITES, COMPLETED, SEPARATOR, DOWNLOADED, SEPARATOR, NEWS, SETTINGS, ABOUT);
 	}
 }

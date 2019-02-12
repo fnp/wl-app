@@ -2,6 +2,7 @@ package com.moiseum.wolnelektury.view.book.list;
 
 import android.os.Bundle;
 
+import com.folioreader.util.AppUtil;
 import com.moiseum.wolnelektury.base.DataObserver;
 import com.moiseum.wolnelektury.base.DataProvider;
 import com.moiseum.wolnelektury.base.WLApplication;
@@ -119,6 +120,7 @@ class BooksListPresenter extends FragmentPresenter<BooksListView> {
 
 		List<Completable> deletionOperations = new ArrayList<>();
 		if (downloadedBook != null && downloadedBook.isEbookDownloaded()) {
+			AppUtil.removeBookState(WLApplication.getInstance().getApplicationContext(), downloadedBook.getEbookName());
 			deletionOperations.add(FileCacheUtils.deleteEbookFile(downloadedBook.getEbookFileUrl()));
 		}
 		if (downloadedBook != null && downloadedBook.isAudioDownloaded()) {

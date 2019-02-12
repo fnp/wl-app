@@ -36,7 +36,8 @@
             android:id="@+id/first_separator"
             style="@style/SettingsSeparator"
             android:layout_width="match_parent"
-            android:layout_height="1dp"/>
+            android:layout_height="1dp"
+            android:visibility="gone"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -44,7 +45,8 @@
             android:paddingBottom="@dimen/settings_bottom_padding"
             android:paddingEnd="@dimen/settings_padding"
             android:paddingStart="@dimen/settings_padding"
-            android:paddingTop="@dimen/settings_bottom_padding">
+            android:paddingTop="@dimen/settings_bottom_padding"
+            android:visibility="gone">
 
             <TextView
                 android:id="@+id/tv_subscribtion"

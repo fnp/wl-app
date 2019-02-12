@@ -24,8 +24,15 @@
     <string name="define">Zdefiniuj</string>
     <string name="highlight">Highlight</string>
 
-    <string name="pages_left">Pozostało %1$d stron</string>
-    <string name="page_left">Pozostała %1$d strona</string>
+    <plurals name="pages_left">
+        <item quantity="zero">Pozostało %1$d stron</item>
+        <item quantity="one">Pozostała %1$d strona</item>
+        <item quantity="two">Pozostały %1$d strony</item>
+        <item quantity="few">Pozostały %1$d strony</item>
+        <item quantity="many">Pozostało %1$d stron</item>
+        <item quantity="other">Pozostało %1$d stron</item>
+    </plurals>
+
     <string name="highlights">Highlight</string>
     <string name="half_speed">1/2x</string>
     <string name="onex">1x</string>

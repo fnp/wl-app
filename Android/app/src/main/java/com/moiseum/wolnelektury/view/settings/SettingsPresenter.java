@@ -2,6 +2,7 @@ package com.moiseum.wolnelektury.view.settings;
 
 import android.os.Bundle;
 
+import com.folioreader.util.AppUtil;
 import com.moiseum.wolnelektury.base.WLApplication;
 import com.moiseum.wolnelektury.base.mvp.FragmentPresenter;
 import com.moiseum.wolnelektury.connection.downloads.FileCacheUtils;
@@ -38,7 +39,7 @@ class SettingsPresenter extends FragmentPresenter<SettingsView> {
 	@Override
 	public void onViewCreated(Bundle savedInstanceState) {
 		super.onViewCreated(savedInstanceState);
-		getView().initializeSettings(preferences.getNotifications(), preferences.isUserPremium());
+		getView().initializeSettings(preferences.getNotifications(), true);
 	}
 
 	@Override
@@ -50,7 +51,7 @@ class SettingsPresenter extends FragmentPresenter<SettingsView> {
 	@SuppressWarnings("unused")
 	@Subscribe(threadMode = ThreadMode.MAIN)
 	public void onLoggedIn(LoggedInEvent event) {
-		getView().initializeSettings(preferences.getNotifications(), preferences.isUserPremium());
+		getView().initializeSettings(preferences.getNotifications(), true);
 	}
 
 	public void onNotificationsChanged(boolean checked) {
@@ -77,6 +78,7 @@ class SettingsPresenter extends FragmentPresenter<SettingsView> {
 			List<BookModel> storedBooks = storage.all();
 			for (BookModel book : storedBooks) {
 				if (book.getEbookFileUrl() != null) {
+					AppUtil.removeBookState(WLApplication.getInstance().getApplicationContext(), book.getEbookName());
 					FileCacheUtils.deleteEbookFile(book.getEbookFileUrl());
 				}
 				if (book.getAudioFileUrls() != null) {

@@ -44,7 +44,7 @@ public class AboutFragment extends AbstractFragment {
 
 	@Override
 	public void prepareView(View view, Bundle savedInstanceState) {
-		btnBecomeAFriend.setVisibility(preferences.isUserPremium() ? View.GONE : View.VISIBLE);
+		btnBecomeAFriend.setVisibility(View.GONE);
 		tvAbout.setText(Html.fromHtml(getString(R.string.about_text)));
 		tvAbout.setLinksClickable(true);
 		tvAbout.setMovementMethod(LinkMovementMethod.getInstance());
@@ -65,7 +65,7 @@ public class AboutFragment extends AbstractFragment {
 	@SuppressWarnings("unused")
 	@Subscribe(threadMode = ThreadMode.MAIN)
 	public void onLoggedIn(LoggedInEvent event) {
-		btnBecomeAFriend.setVisibility(preferences.isUserPremium() ? View.GONE : View.VISIBLE);
+		btnBecomeAFriend.setVisibility(View.GONE);
 	}
 
 	@OnClick(R.id.btnBecomeAFriend)

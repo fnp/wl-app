@@ -20,6 +20,7 @@ import android.content.Context;
 import android.support.v4.media.MediaBrowserCompat;
 import android.support.v4.media.MediaMetadataCompat;
 
+import com.google.gson.Gson;
 import com.moiseum.wolnelektury.connection.models.BookDetailsModel;
 import com.moiseum.wolnelektury.connection.models.MediaModel;
 import com.moiseum.wolnelektury.utils.StringUtils;
@@ -29,8 +30,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.TreeMap;
 
+import nl.siegmann.epublib.domain.Book;
+
 
 public class AudiobookLibrary {
+
+	public static final String METADATA_BOOK_DETAILS = "MetadataBookDetails";
+	public static final String METADATA_BOOK_SLUG = "MetadataBookSlug";
 
     private static final TreeMap<String, MediaMetadataCompat> music = new TreeMap<>();
 //    private static final HashMap<String, Integer> albumRes = new HashMap<>();
@@ -83,7 +89,9 @@ public class AudiobookLibrary {
                         MediaMetadataCompat.METADATA_KEY_ALBUM,
 		                MediaMetadataCompat.METADATA_KEY_AUTHOR,
 		                MediaMetadataCompat.METADATA_KEY_GENRE,
-		                MediaMetadataCompat.METADATA_KEY_ALBUM_ART_URI
+		                MediaMetadataCompat.METADATA_KEY_ALBUM_ART_URI,
+		                METADATA_BOOK_DETAILS,
+		                METADATA_BOOK_SLUG
                 }) {
             builder.putString(key, metadataWithoutBitmap.getString(key));
         }
@@ -93,10 +101,11 @@ public class AudiobookLibrary {
         return builder.build();
     }
 
-	public static void createAudiobookMetadata(BookDetailsModel book) {
+	public static void createAudiobookMetadata(BookDetailsModel book, String slug) {
     	music.clear();
     	int index = 0;
 		List<MediaModel> medias = book.getAudiobookMediaModels();
+		Gson gson = new Gson();
 
 		for (MediaModel model : medias) {
 			createMediaMetadataCompat(
@@ -108,6 +117,8 @@ public class AudiobookLibrary {
 					StringUtils.joinCategory(book.getGenres(), ", "),
 					book.getCoverThumb(),
 					model.getUrl(),
+					gson.toJson(book),
+					slug,
 					index++,
 					medias.size()
 			);
@@ -123,6 +134,8 @@ public class AudiobookLibrary {
             String genre,
 			String artUrl,
             String musicFilename,
+            String jsonDetailsModel,
+            String slug,
             int trackNumber,
             int tracksCount
     ) {
@@ -136,6 +149,8 @@ public class AudiobookLibrary {
 		                .putString(MediaMetadataCompat.METADATA_KEY_AUTHOR, author)
                         .putString(MediaMetadataCompat.METADATA_KEY_GENRE, genre)
 		                .putString(MediaMetadataCompat.METADATA_KEY_ALBUM_ART_URI, artUrl)
+		                .putString(METADATA_BOOK_DETAILS, jsonDetailsModel)
+		                .putString(METADATA_BOOK_SLUG, slug)
 //                        .putString(
 //                                MediaMetadataCompat.METADATA_KEY_DISPLAY_ICON_URI,
 //                                getAlbumArtUri(albumArtResName))
