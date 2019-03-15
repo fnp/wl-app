@@ -39,7 +39,7 @@ class SettingsPresenter extends FragmentPresenter<SettingsView> {
 	@Override
 	public void onViewCreated(Bundle savedInstanceState) {
 		super.onViewCreated(savedInstanceState);
-		getView().initializeSettings(preferences.getNotifications(), true);
+		getView().initializeSettings(preferences.getNotifications(), preferences.isUserPremium());
 	}
 
 	@Override
@@ -51,7 +51,7 @@ class SettingsPresenter extends FragmentPresenter<SettingsView> {
 	@SuppressWarnings("unused")
 	@Subscribe(threadMode = ThreadMode.MAIN)
 	public void onLoggedIn(LoggedInEvent event) {
-		getView().initializeSettings(preferences.getNotifications(), true);
+		getView().initializeSettings(preferences.getNotifications(), preferences.isUserPremium());
 	}
 
 	public void onNotificationsChanged(boolean checked) {

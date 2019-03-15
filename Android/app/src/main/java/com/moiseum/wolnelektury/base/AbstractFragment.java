@@ -80,12 +80,7 @@ public abstract class AbstractFragment extends Fragment {
 	}
 
 	protected void showPayPalForm() {
-		SharedPreferencesUtils preferences = WLApplication.getInstance().getPreferences();
-		if (preferences.isUserLoggedIn()) {
-			showBrowserView(Uri.parse(RestClient.WEB_PAYPAL_FORM_URL));
-		} else {
-			startActivity(new LoginActivity.LoginIntent(getContext()));
-		}
+		showBrowserView(Uri.parse(RestClient.WEB_PAYPAL_FORM_URL));
 	}
 
 	protected void showBrowserView(Uri uri) {

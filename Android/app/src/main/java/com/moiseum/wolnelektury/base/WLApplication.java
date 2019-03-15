@@ -31,6 +31,7 @@ public class WLApplication extends MultiDexApplication {
 		Crashlytics crashlytics = new Crashlytics.Builder()
 				.core(new CrashlyticsCore.Builder().disabled(BuildConfig.DEBUG).build())
 				.build();
+		// TODO: Change before release
 		Fabric.with(this, new Crashlytics());
 	}
 

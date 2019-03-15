@@ -94,12 +94,7 @@ public abstract class AbstractActivity extends AppCompatActivity {
 	}
 
 	protected void showPayPalForm() {
-		SharedPreferencesUtils preferences = WLApplication.getInstance().getPreferences();
-		if (preferences.isUserLoggedIn()) {
-			showBrowserView(Uri.parse(RestClient.WEB_PAYPAL_FORM_URL));
-		} else {
-			startActivity(new LoginActivity.LoginIntent(this));
-		}
+		showBrowserView(Uri.parse(RestClient.WEB_PAYPAL_FORM_URL));
 	}
 
 	protected void showBrowserView(Uri uri) {

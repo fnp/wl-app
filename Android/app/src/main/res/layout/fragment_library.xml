@@ -12,20 +12,20 @@
         android:paddingBottom="20dp">
 
         <RelativeLayout
+            android:id="@+id/rlBecomeAFriend"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
-            android:paddingEnd="10dp"
-            android:paddingStart="10dp">
+            android:background="@color/splash_background"
+            android:padding="10dp">
 
             <Button
-                android:id="@+id/btnSupportUs"
+                android:id="@+id/btnBecomeAFriend"
                 style="@style/RoundedButton.Orange"
                 android:layout_width="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:drawableEnd="@drawable/ic_arrow_right_white_24dp"
-                android:text="@string/support_us"
+                android:text="@string/become_a_friend"
                 android:textSize="10dp"
                 tools:ignore="SpUsage"/>
 
@@ -34,15 +34,20 @@
                 android:layout_height="1dp"
                 android:layout_centerVertical="true"
                 android:layout_margin="@dimen/separator_padding"
-                android:layout_toStartOf="@id/btnSupportUs"
+                android:layout_toStartOf="@id/btnBecomeAFriend"
                 android:background="@color/orange_light"/>
 
         </RelativeLayout>
 
+        <View
+            android:id="@+id/vBecomeAFriendSeparator"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/splash_background"/>
+
         <include
             android:id="@+id/libraryHeader"
-            layout="@layout/library_header"
-            android:visibility="gone"/>
+            layout="@layout/library_header"/>
 
         <RelativeLayout
             android:id="@+id/rlReadingNowContainer"

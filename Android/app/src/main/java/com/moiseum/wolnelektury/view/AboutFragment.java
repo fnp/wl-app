@@ -44,7 +44,7 @@ public class AboutFragment extends AbstractFragment {
 
 	@Override
 	public void prepareView(View view, Bundle savedInstanceState) {
-		btnBecomeAFriend.setVisibility(View.GONE);
+		btnBecomeAFriend.setVisibility(preferences.isUserPremium() ? View.GONE : View.VISIBLE);
 		tvAbout.setText(Html.fromHtml(getString(R.string.about_text)));
 		tvAbout.setLinksClickable(true);
 		tvAbout.setMovementMethod(LinkMovementMethod.getInstance());

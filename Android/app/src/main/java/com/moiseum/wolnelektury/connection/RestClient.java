@@ -34,14 +34,14 @@ public class RestClient {
 	public static final String MEDIA_URL = "http://wolnelektury.pl/media/";
 	public static final String MEDIA_URL_HTTPS = "https://wolnelektury.pl/media/";
 	public static final String BASE_URL = "https://wolnelektury.pl/api/";
-	public static final String WEB_OAUTH_AUTHORIZATION_URL = "";
-	public static final String WEB_PAYPAL_FORM_URL = "";
+	public static final String WEB_OAUTH_AUTHORIZATION_URL = "https://wolnelektury.pl/api/oauth/authorize/?oauth_token=%s&oauth_callback=wolnelekturyapp://oauth.callback/";
+	public static final String WEB_PAYPAL_FORM_URL = "https://wolnelektury.pl/paypal/app-form/";
 
 	private static final String CACHE_DIR = "responses";
 	private static final int CACHE_SIZE_MB = 10;
 
-	private static final String CONSUMER_KEY = "";
-	private static final String CONSUMER_SECRET = "";
+	private static final String CONSUMER_KEY = "wlapp";
+	private static final String CONSUMER_SECRET = "pWIkFMA9|g$6\\|tZN]CgQ:Hz";
 
 	private final Retrofit retrofit;
 	private final OAuthSigningInterceptor oAuthInterceptor;

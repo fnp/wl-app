@@ -15,8 +15,6 @@ import com.moiseum.wolnelektury.events.LoggedInEvent;
 import com.moiseum.wolnelektury.storage.BookStorage;
 import com.moiseum.wolnelektury.utils.SharedPreferencesUtils;
 import com.moiseum.wolnelektury.view.book.BookType;
-import com.moiseum.wolnelektury.view.book.list.AudiobooksDataProvider;
-import com.moiseum.wolnelektury.view.book.list.FavouritesDataProvider;
 import com.moiseum.wolnelektury.view.book.list.NewestBooksDataProvider;
 import com.moiseum.wolnelektury.view.book.list.ReadingStateDataProvider;
 import com.moiseum.wolnelektury.view.book.list.RecommendedBooksDataProvider;
@@ -80,7 +78,7 @@ class LibraryPresenter extends FragmentPresenter<LibraryView> {
 	@Override
 	public void onResume() {
 		super.onResume();
-		getView().showBecomeAFriendHeader(true);
+		getView().showBecomeAFriendHeader(preferences.isUserPremium());
 	}
 
 	@Override
@@ -140,7 +138,7 @@ class LibraryPresenter extends FragmentPresenter<LibraryView> {
 	@SuppressWarnings("unused")
 	@Subscribe(threadMode = ThreadMode.MAIN)
 	public void onLoggedIn(LoggedInEvent event) {
-		getView().showBecomeAFriendHeader(true);
+		getView().showBecomeAFriendHeader(preferences.isUserPremium());
 		getView().setNowReadingVisibility(true);
 		nowReadingBooksDataProvider.load(null);
 	}
@@ -153,36 +151,35 @@ class LibraryPresenter extends FragmentPresenter<LibraryView> {
 
 	void fetchHeader() {
 		getView().setProgressContainerVisible(true);
-		getView().setHeaderProgressVisible(false);
-		getView().showHeaderEmpty(true);
-		//		currentCall = client.call(new RestClientCallback<List<BookDetailsModel>, BooksService>() {
-		//			@Override
-		//			public void onSuccess(List<BookDetailsModel> data) {
-		//				getView().setHeaderProgressVisible(false);
-		//				if (data.size() > 0) {
-		//					premiereBook = data.get(0);
-		//					getView().initHeader(premiereBook);
-		//					getView().setProgressContainerVisible(false);
-		//				} else {
-		//					getView().showHeaderEmpty(preferences.isUserLoggedIn());
-		//				}
-		//			}
-		//
-		//			@Override
-		//			public void onFailure(Exception e) {
-		//				getView().showHeaderError();
-		//			}
-		//
-		//			@Override
-		//			public void onCancel() {
-		//				// nop.
-		//			}
-		//
-		//			@Override
-		//			public Call<List<BookDetailsModel>> execute(BooksService service) {
-		//				return service.getPreview();
-		//			}
-		//		}, BooksService.class);
+		getView().setHeaderProgressVisible(true);
+		currentCall = client.call(new RestClientCallback<List<BookDetailsModel>, BooksService>() {
+			@Override
+			public void onSuccess(List<BookDetailsModel> data) {
+				getView().setHeaderProgressVisible(false);
+				if (data.size() > 0) {
+					premiereBook = data.get(0);
+					getView().initHeader(premiereBook);
+					getView().setProgressContainerVisible(false);
+				} else {
+					getView().showHeaderEmpty(preferences.isUserLoggedIn());
+				}
+			}
+
+			@Override
+			public void onFailure(Exception e) {
+				getView().showHeaderError();
+			}
+
+			@Override
+			public void onCancel() {
+				// nop.
+			}
+
+			@Override
+			public Call<List<BookDetailsModel>> execute(BooksService service) {
+				return service.getPreview();
+			}
+		}, BooksService.class);
 	}
 
 

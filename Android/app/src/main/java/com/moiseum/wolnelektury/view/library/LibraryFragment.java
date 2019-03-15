@@ -28,7 +28,6 @@ import com.moiseum.wolnelektury.view.book.list.BookListActivity;
 import com.moiseum.wolnelektury.view.book.list.BookListType;
 import com.moiseum.wolnelektury.view.main.MainActivity;
 import com.moiseum.wolnelektury.view.main.NavigationElement;
-import com.moiseum.wolnelektury.view.supportus.SupportUsActivity;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -71,6 +70,10 @@ public class LibraryFragment extends PresenterFragment<LibraryPresenter> impleme
 	ImageButton ibRetry;
 	@BindView(R.id.rlHeaderLoadingContainer)
 	RelativeLayout rlHeaderLoadingContainer;
+	@BindView(R.id.rlBecomeAFriend)
+	View rlBecomeAFriend;
+	@BindView(R.id.vBecomeAFriendSeparator)
+	View vBecomeAFriendSeparator;
 	@BindView(R.id.ivAudiobook)
 	ImageView ivHeaderAudiobook;
 
@@ -112,7 +115,8 @@ public class LibraryFragment extends PresenterFragment<LibraryPresenter> impleme
 
 	@Override
 	public void showBecomeAFriendHeader(boolean premium) {
-
+		rlBecomeAFriend.setVisibility(premium ? View.GONE : View.VISIBLE);
+		vBecomeAFriendSeparator.setVisibility(premium ? View.VISIBLE : View.GONE);
 	}
 
 	@Override
@@ -230,9 +234,9 @@ public class LibraryFragment extends PresenterFragment<LibraryPresenter> impleme
 		startActivity(new BookActivity.BookIntent(slug, bookType, getContext()));
 	}
 
-	@OnClick(R.id.btnSupportUs)
-	public void onSupportUsClicked() {
-		startActivity(new SupportUsActivity.SupportUsIntent(getActivity()));
+	@OnClick(R.id.btnBecomeAFriend)
+	public void onBecomeAFriendClick() {
+		showPayPalForm();
 	}
 
 	@OnClick(R.id.btnNewestSeeAll)

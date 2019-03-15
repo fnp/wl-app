@@ -65,6 +65,9 @@ class MainPresenter extends Presenter<MainView> {
 
 	void onLoginClicked() {
 		getView().setProgressDialogVisibility(true);
+
+		client.clearOAuthTokens();
+		preferences.clearUserData();
 		currentCall = client.call(new RestClientCallback<OAuthTokenModel, UserService>() {
 
 			@Override

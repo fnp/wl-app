@@ -16,8 +16,7 @@
             style="@style/RoundedButton.Orange"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="20dp"
-            android:text="@string/become_a_friend"
-            android:visibility="gone"/>
+            android:text="@string/become_a_friend"/>
 
         <ImageView
             android:layout_width="200dp"
