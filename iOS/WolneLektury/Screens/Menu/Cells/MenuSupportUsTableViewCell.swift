@@ -26,7 +26,7 @@ class MenuSupportUsTableViewCell: WLTableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         button.layer.cornerRadius = 15
-        button.text = "support_us".localized.uppercased()
+        button.text = "become_a_friend".localized.uppercased()
         backgroundColor = UIColor.clear
         contentView.backgroundColor = UIColor.clear
     }

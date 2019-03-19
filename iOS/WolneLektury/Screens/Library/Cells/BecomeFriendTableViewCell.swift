@@ -27,9 +27,9 @@ class BecomeFriendTableViewCell: WLTableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         button.layer.cornerRadius = 15
-        button.text = "support_us".localized.uppercased()
+        button.text = "become_a_friend".localized.uppercased()
         arrowImageView.tintColor = UIColor.white
-        contentView.backgroundColor = UIColor.white
+        contentView.backgroundColor = Constants.donateEnabled ? UIColor(red: 0, green: 103.0/255.0, blue: 109.0/255.0, alpha: 1.0) : UIColor.white
     }
     
     override func getHeight() -> CGFloat {

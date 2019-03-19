@@ -22,7 +22,7 @@ struct Constants {
     static let callbackPaypalErrorHost = "paypal_error"
     static let authorizationUrlFormat = "https://wolnelektury.pl/api/oauth/authorize/?oauth_token=%@&oauth_callback=wolnelekturyapp://oauth-callback/"
     static let webPaypalFormUrl = "https://wolnelektury.pl/paypal/app-form/"
-    static let donateEnabled: Bool = false
+    static let donateEnabled: Bool = true
 
     struct StoryboardIds {
         static let SampleController = "SampleControllerID"

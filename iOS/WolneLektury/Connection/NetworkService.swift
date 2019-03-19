@@ -257,7 +257,7 @@ final class NetworkService {
         let action = RestAction.requestToken
         let method = action.httpMethod
 
-        let acceptableContentType = "text/html"
+//        let acceptableContentType = "text/html"
         let url = urlStringWithRequestTokenParameters(action: action)
         print(url)
         
@@ -266,7 +266,7 @@ final class NetworkService {
         
         let encoding : ParameterEncoding = (method == .get || method == .delete) ? URLEncoding.default : JSONEncoding.default
         self.manager.request(url, method: method, parameters: parameters, encoding: encoding, headers: headers)
-            .validate(contentType: [acceptableContentType])
+//            .validate(contentType: [acceptableContentType])
             .validate()
             .log(level: .all, options: [.onlyDebug, .jsonPrettyPrint, .includeSeparator], printer: NativePrinter())
             .response { response in
@@ -304,7 +304,7 @@ final class NetworkService {
         let action = RestAction.accessToken
         let method = action.httpMethod
         
-        let acceptableContentType = "text/html"
+//        let acceptableContentType = "text/html"
         let url = urlStringWithRequestTokenParameters(action: action)
         print(url)
         
@@ -313,7 +313,7 @@ final class NetworkService {
         
         let encoding : ParameterEncoding = (method == .get || method == .delete) ? URLEncoding.default : JSONEncoding.default
         self.manager.request(url, method: method, parameters: parameters, encoding: encoding, headers: headers)
-            .validate(contentType: [acceptableContentType])
+//            .validate(contentType: [acceptableContentType])
             .validate()
             .log(level: .all, options: [.onlyDebug, .jsonPrettyPrint, .includeSeparator], printer: NativePrinter())
             .response { response in

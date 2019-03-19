@@ -342,7 +342,9 @@ extension MenuViewController: UITableViewDelegate{
 
 extension MenuViewController: MenuSupportUsTableViewCellDelegate{
     func menuSupportUsButtonTapped(){
-        appDelegate.mainNavigator.presentSupportUs()
+        appDelegate.presentPaypal(fromViewController: self)
+
+//        appDelegate.mainNavigator.presentSupportUs()
     }
 }
 

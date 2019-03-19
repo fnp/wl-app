@@ -34,7 +34,7 @@ class LibraryEarlyAccessTableViewCell: WLTableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         miniatureBgView.layer.cornerRadius = 5
-        noPremiumBookLabel.text = "library_empty_header".localized
+        noPremiumBookLabel.text = DatabaseManager.shared.isUserPremium() ? "library_empty_header_logged".localized : "library_empty_header".localized
     }
     
     func setup(state: ActivityIndicatorButtonState, bookModel: BookModel?) {

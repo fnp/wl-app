@@ -54,12 +54,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         mainNavigator = MainNavigator(window: window!)
         setCustomAppearance()
         
-        if syncManager.isLoggedIn(){
-            fetchUsername()
-        }
-        
-//        configureMessaging(application: application)
-        
         return true
     }
     
@@ -117,6 +111,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         mainNavigator.updateSettingsViewIfPresented()
+        if syncManager.isLoggedIn(){
+            fetchUsername()
+        }
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
@@ -168,8 +165,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.hideWindowHud()
             switch result {
             case .success(let model):
+                let premiumBefore = DatabaseManager.shared.isUserPremium()
                 DatabaseManager.shared.updateUser(usernameModel: model as? UsernameModel)
-                self.mainNavigator.setLoggedIn()
+                
+                if DatabaseManager.shared.isUserPremium() == premiumBefore {
+                    self.mainNavigator.setLoggedIn()
+                }
+                else {
+                    self.mainNavigator.reset()
+                }
                 break
             case .failure/*(let error)*/:
                 //We can download username later
@@ -178,7 +182,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         })
     }
-    
+
     func login(fromViewController: UIViewController){
         let oauthswift = OAuth1Swift(
             consumerKey:    Config.CONSUMER_KEY,

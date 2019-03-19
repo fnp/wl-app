@@ -80,7 +80,8 @@ class MainNavigator: NSObject {
     }
     
     func presentSupportUs() {
-        setRootViewController(controller: SupportUsViewController.instance())
+        presentPayPalForm()
+//        setRootViewController(controller: SupportUsViewController.instance())
     }
 
     func presentBookList(listViewControllerType: ListViewControllerType){

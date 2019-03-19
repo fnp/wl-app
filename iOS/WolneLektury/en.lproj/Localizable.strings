@@ -100,7 +100,7 @@
 "audiobook"="Audiobook";
 "has_audiobook"="Audiobooki";
 "nav_downloaded"="Moja kolekcja";
-"library_empty_header" = "Obecnie przygotowujemy dla Ciebie nową Prapremierę.";// Jeśli chcesz mieć do niej dostęp kliknij tutaj i zostań naszym Przyjacielem";
+"library_empty_header" = "Obecnie przygotowujemy dla Ciebie nową Prapremierę. Jeśli chcesz mieć do niej dostęp kliknij tutaj i zostań naszym Przyjacielem";
 "library_empty_header_logged" = "Obecnie przygotowujemy dla Ciebie nową Prapremierę.";
 "become_friend_desc" = "Powyższe dzieło dostępne jest w ramach\nprogramu Wczesnego Dostępu dla\nużytkowników, którzy zdecydowali się\nwesprzeć Wolne Lektury. Chcesz czytać\njuż teraz? Wesprzyj nas! Zostań naszym\nprzyjacielem!";
 "become_friend_button" = "Zostań przyjacielem";
