@@ -62,6 +62,8 @@ class SettingsViewController: MainViewController {
                     // You could tell them to change this in Settings
                     case .authorized:
                         self?.notificationsSwitch.setOn(true, animated: true)
+                    case .provisional:
+                        self?.notificationsSwitch.setOn(true, animated: true)
                     }
                 }
 

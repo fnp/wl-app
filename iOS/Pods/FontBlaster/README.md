@@ -1,10 +1,10 @@
 # FontBlaster
 
-### Programmatically load custom fonts into your iOS app.
+### Programmatically load custom fonts into your iOS and tvOS app.
 
-![Swift Support](https://img.shields.io/badge/Swift-3.1%2C%203.2%2C%204.0-orange.svg)
+![Swift Support](https://img.shields.io/badge/Swift-3.1%2C%203.2%2C%204.1-orange.svg) ![Platform](https://img.shields.io/badge/Platforms-iOS%20%7c%20tvOS%20-lightgray.svg?style=flat)
 
-[![CocoaPods](https://img.shields.io/cocoapods/v/FontBlaster.svg)](https://cocoapods.org/pods/FontBlaster)  [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![SwiftPM Compatible](https://img.shields.io/badge/SwiftPM-Compatible-brightgreen.svg)](https://swift.org/package-manager/) [![CocoaPods](https://img.shields.io/cocoapods/dt/FontBlaster.svg)](https://cocoapods.org/pods/FontBlaster) [![CocoaPods](https://img.shields.io/cocoapods/dm/FontBlaster.svg)](https://cocoapods.org/pods/FontBlaster)
+[![CocoaPods](https://img.shields.io/cocoapods/v/FontBlaster.svg)](https://cocoapods.org/pods/FontBlaster)  [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![SwiftPM Compatible](https://img.shields.io/badge/SwiftPM-Compatible-brightgreen.svg)](https://swift.org/package-manager/)
 ---
 ## About
 
@@ -23,12 +23,12 @@ Say goodbye to importing custom fonts via property lists as **FontBlaster** auto
 
 | Swift Version |  Branch Name  | Will Continue to Receive Updates?
 | ------------- | ------------- |  -------------
-| 4.0  | master   | **Yes**
+| 4.1  | master   | **Yes**
 | 3.2  | swift3.2 | No
 | 3.1  | swift3.1  | No
 
 #### CocoaPods
-For Swift 4 support:
+For Swift 4.1 support:
 ```ruby
 pod 'FontBlaster'
 ```
@@ -44,7 +44,7 @@ pod 'FontBlaster', :git => 'https://github.com/ArtSabintsev/FontBlaster.git', :b
 ```
 
 ### Carthage
-For Swift 4 support:
+For Swift 4.1 support:
 
 ```swift
 github "ArtSabintsev/FontBlaster"

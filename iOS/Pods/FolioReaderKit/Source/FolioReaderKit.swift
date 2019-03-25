@@ -14,8 +14,10 @@ import UIKit
 internal let kApplicationDocumentsDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
 internal let kCurrentFontFamily = "com.folioreader.kCurrentFontFamily"
 internal let kCurrentFontSize = "com.folioreader.kCurrentFontSize"
+//pd: added
 internal let kCurrentMarginSize = "com.folioreader.kCurrentMarginSize"
 internal let kCurrentInterlineSize = "com.folioreader.kCurrentInterlineSize"
+//pd added end
 internal let kCurrentAudioRate = "com.folioreader.kCurrentAudioRate"
 internal let kCurrentHighlightStyle = "com.folioreader.kCurrentHighlightStyle"
 internal let kCurrentMediaOverlayStyle = "com.folioreader.kMediaOverlayStyle"
@@ -138,23 +140,24 @@ open class FolioReader: NSObject {
     // Add necessary observers
     fileprivate func addObservers() {
         removeObservers()
-        NotificationCenter.default.addObserver(self, selector: #selector(saveReaderState), name: .UIApplicationWillResignActive, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(saveReaderState), name: .UIApplicationWillTerminate, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(saveReaderState), name: UIApplication.willResignActiveNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(saveReaderState), name: UIApplication.willTerminateNotification, object: nil)
     }
 
     /// Remove necessary observers
     fileprivate func removeObservers() {
-        NotificationCenter.default.removeObserver(self, name: .UIApplicationWillResignActive, object: nil)
-        NotificationCenter.default.removeObserver(self, name: .UIApplicationWillTerminate, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIApplication.willResignActiveNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIApplication.willTerminateNotification, object: nil)
     }
-    
+
+    //pd: added
     public func getProgressValues() -> (currentPage: Int, totalPages: Int)? {
         guard let center = readerCenter else { return nil}
         let totalPages = center.totalPages
         let currentPage = center.currentPageNumber
         return (currentPage, totalPages)
     }
-
+    //pd: added end
 }
 
 // MARK: - Present FolioReader
@@ -224,7 +227,29 @@ extension FolioReader {
         }
     }
 
-    /// Check current font size. Default .m
+//    /// Check current font size. Default .m
+//    open var currentFontSize: FolioReaderFontSize {
+//        get {
+//            guard
+//                let rawValue = self.defaults.value(forKey: kCurrentFontSize) as? Int,
+//                let size = FolioReaderFontSize(rawValue: rawValue) else {
+//                    return .m
+//            }
+//
+//            return size
+//        }
+//        set (value) {
+//            self.defaults.set(value.rawValue, forKey: kCurrentFontSize)
+//
+//            guard let currentPage = self.readerCenter?.currentPage else {
+//                return
+//            }
+//
+//            currentPage.webView?.js("setFontSize('\(currentFontSize.cssIdentifier)')")
+//        }
+//    }
+
+    //pd: added
     open var currentFontSize: FolioReaderSliderParamSize {
         get {
             guard
@@ -232,16 +257,16 @@ extension FolioReader {
                 let size = FolioReaderSliderParamSize(rawValue: rawValue) else {
                     return .m
             }
-
+            
             return size
         }
         set (value) {
             self.defaults.set(value.rawValue, forKey: kCurrentFontSize)
-
+            
             guard let currentPage = self.readerCenter?.currentPage else {
                 return
             }
-
+            
             currentPage.webView?.js("setFontSize('\(currentFontSize.cssIdentifier(sliderType: SliderType.font) )')")
         }
     }
@@ -267,7 +292,7 @@ extension FolioReader {
             currentPage.webView?.js("setMarginSize('\(currentMarginSize.cssIdentifier(sliderType: SliderType.margin))')")
         }
     }
-
+    
     /// Check current interline size. Default .m
     open var currentInterlineSize: FolioReaderSliderParamSize {
         get {
@@ -288,11 +313,12 @@ extension FolioReader {
             
             currentPage.webView?.js("setInterlineSize('\(currentInterlineSize.cssIdentifier(sliderType: SliderType.interline))')")
             
-//            print("\n\nhtmllllll\n\n" + currentPage.webView!.stringByEvaluatingJavaScript(from: "document.documentElement.outerHTML")!)
-
+            //            print("\n\nhtmllllll\n\n" + currentPage.webView!.stringByEvaluatingJavaScript(from: "document.documentElement.outerHTML")!)
+            
         }
     }
-
+    //pd: added end
+    
     /// Check current audio rate, the speed of speech voice. Default 0
     open var currentAudioRate: Int {
         get { return self.defaults.integer(forKey: kCurrentAudioRate) }

@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EF83FCC10E7453ACCB801B656501E2F6"
+               BlueprintIdentifier = "0B7AAD5E76D356B7B22BB0151FD934DC"
+               BuildableName = "OAuthSwift.framework"
                BlueprintName = "OAuthSwift"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "OAuthSwift.framework">
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

@@ -57,6 +57,7 @@ body {
 table {
     border-collapse: collapse;
     border-spacing: 0;
+/*    word-break: normal;*/
 }
 tbody, tfoot, thead {
     vertical-align: middle !important;
@@ -293,7 +294,7 @@ body {
 }
 p, span, div {
     font-size: 1em;
-/*    line-height: 1.5 !important;*/
+    /* //pd: changed    line-height: 1.5 !important;*/
 }
 @media only screen and (min-device-width: 600px) {
     div {

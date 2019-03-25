@@ -527,13 +527,13 @@ extension BookDetailsViewController: DownloadManagerDelegate{
 
 extension BookDetailsViewController: FolioReaderDelegate{
     @objc func folioReaderDidClose(_ folioReader: FolioReader) {
-        guard let bookDetailsModel = bookDetailsModel, let progressValues = folioReader.getProgressValues(), progressValues.currentPage > 0, progressValues.currentPage <= progressValues.totalPages else { return }
-        
-        DatabaseManager.shared.updateCurrentChapters(bookDetailsModel: bookDetailsModel, currentChapter: progressValues.currentPage, totalChapters: progressValues.totalPages, currentAudioChapter: nil, totalAudioChapters: nil)
-        readCell?.setup(bookDetailsButtonType: .download_ebook_read, progress: nil, bookDetailsModel: bookDetailsModel)
-        
-        if progressValues.currentPage == progressValues.totalPages && readingState == ReadingStateModel.ReadingState.reading{
-           updateReadingStateIfNeeded(state: .complete)
-        }
+//        guard let bookDetailsModel = bookDetailsModel, let progressValues = folioReader.getProgressValues(), progressValues.currentPage > 0, progressValues.currentPage <= progressValues.totalPages else { return }
+//        
+//        DatabaseManager.shared.updateCurrentChapters(bookDetailsModel: bookDetailsModel, currentChapter: progressValues.currentPage, totalChapters: progressValues.totalPages, currentAudioChapter: nil, totalAudioChapters: nil)
+//        readCell?.setup(bookDetailsButtonType: .download_ebook_read, progress: nil, bookDetailsModel: bookDetailsModel)
+//        
+//        if progressValues.currentPage == progressValues.totalPages && readingState == ReadingStateModel.ReadingState.reading{
+//           updateReadingStateIfNeeded(state: .complete)
+//        }
     }
 }

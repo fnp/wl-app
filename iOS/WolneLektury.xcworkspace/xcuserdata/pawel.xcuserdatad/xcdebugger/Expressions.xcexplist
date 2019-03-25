@@ -22,18 +22,18 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "BookDetailsViewController.viewDidLoad():BookDetailsViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "UIApplication.shared.statusBarFrame.size.height">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "FolioReaderPage.webViewFrame():FolioReaderPage.swift">
          <PersistentStrings>
             <PersistentString
                value = "bounds.origin.x">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "BookDetailsViewController.viewDidLoad():BookDetailsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "UIApplication.shared.statusBarFrame.size.height">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -72,10 +72,10 @@
          contextName = "BookDetailsViewController.tableView(_:cellForRowAt:):BookDetailsViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "tableView.frame">
+               value = "tableView.contentInset">
             </PersistentString>
             <PersistentString
-               value = "tableView.contentInset">
+               value = "tableView.frame">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -84,6 +84,14 @@
          <PersistentStrings>
             <PersistentString
                value = "navigationItem.titleView.bounds">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "FolioReaderCenter.configure(readerPageCell:atIndexPath:):FolioReaderCenter.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "indexPath.row">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

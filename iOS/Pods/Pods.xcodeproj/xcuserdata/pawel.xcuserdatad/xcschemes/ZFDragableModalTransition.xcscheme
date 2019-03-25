@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D449FC7BC81F775BC2E4BB53D77B64D6"
+               BlueprintIdentifier = "7E734FD6FFE051DE27365D53819AADB1"
+               BuildableName = "ZFDragableModalTransition.framework"
                BlueprintName = "ZFDragableModalTransition"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "ZFDragableModalTransition.framework">
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

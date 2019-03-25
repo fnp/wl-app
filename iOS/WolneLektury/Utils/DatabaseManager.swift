@@ -22,7 +22,7 @@ class DatabaseManager: NSObject {
     func realmConfiguration()
     {
         Realm.Configuration.defaultConfiguration = Realm.Configuration(
-            schemaVersion: 1,
+            schemaVersion: 2,
             migrationBlock: { migration, oldSchemaVersion in
                 /*
                  if (oldSchemaVersion < 1) {

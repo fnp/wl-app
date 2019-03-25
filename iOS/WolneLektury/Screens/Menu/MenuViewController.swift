@@ -297,35 +297,38 @@ extension MenuViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if let cell = cellsArray[indexPath.row] as? MenuTableViewCell{
-            switch cell.menuItem{
-            case .wolne_lektury:
-                appDelegate.mainNavigator.presentLibrary(dismissSideMenu: true)
-            case .premium:
-                getPreview()
-                if let selectedRow = selectedRow{
-                    tableView.selectRow(at: selectedRow, animated: false, scrollPosition: .none)
+            if let menuItem = cell.menuItem {
+                switch menuItem{
+                case .wolne_lektury:
+                    appDelegate.mainNavigator.presentLibrary(dismissSideMenu: true)
+                case .premium:
+                    getPreview()
+                    if let selectedRow = selectedRow{
+                        tableView.selectRow(at: selectedRow, animated: false, scrollPosition: .none)
+                    }
+                    return
+                case .audiobooks:
+                    appDelegate.mainNavigator.presentBookList(listViewControllerType: .audiobooks)
+                case .downloaded:
+                    appDelegate.mainNavigator.presentDownloaded()
+                case .catalog:
+                    appDelegate.mainNavigator.presentSearch()
+                case .news:
+                    appDelegate.mainNavigator.presentNews()
+                case .settings:
+                    appDelegate.mainNavigator.presentSettings()
+                case .about:
+                    appDelegate.mainNavigator.presentAbout()
+                case .reading:
+                    appDelegate.mainNavigator.presentBookList(listViewControllerType: .reading_now)
+                case .favourites:
+                    appDelegate.mainNavigator.presentBookList(listViewControllerType: .favourites)
+                case .completed:
+                    appDelegate.mainNavigator.presentBookList(listViewControllerType: .completed)
+                default:
+                    break
                 }
-                return
-            case .audiobooks:
-                appDelegate.mainNavigator.presentBookList(listViewControllerType: .audiobooks)
-            case .downloaded:
-                appDelegate.mainNavigator.presentDownloaded()
-            case .catalog:
-                appDelegate.mainNavigator.presentSearch()
-            case .news:
-                appDelegate.mainNavigator.presentNews()
-            case .settings:
-                appDelegate.mainNavigator.presentSettings()
-            case .about:
-                appDelegate.mainNavigator.presentAbout()
-            case .reading:
-                appDelegate.mainNavigator.presentBookList(listViewControllerType: .reading_now)
-            case .favourites:
-                appDelegate.mainNavigator.presentBookList(listViewControllerType: .favourites)
-            case .completed:
-                appDelegate.mainNavigator.presentBookList(listViewControllerType: .completed)
-            default:
-                break
+
             }
             selectedRow = indexPath
         }

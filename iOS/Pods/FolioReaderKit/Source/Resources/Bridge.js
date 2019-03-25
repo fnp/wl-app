@@ -78,6 +78,7 @@ function setFontSize(cls) {
     addClass(elm, cls);
 }
 
+//pd: added
 // Set font size
 function setMarginSize(cls) {
     var elm = document.documentElement;
@@ -99,6 +100,7 @@ function setInterlineSize(cls) {
     removeClass(elm, "interlineSizeFive");
     addClass(elm, cls);
 }
+//pd: added end
 
 /*
  *	Native bridge Highlight text
@@ -123,6 +125,32 @@ function highlightString(style) {
     params.push({id: id, rect: getRectForSelectedText(elm), startOffset: startOffset.toString(), endOffset: endOffset.toString()});
     
     return JSON.stringify(params);
+}
+
+function highlightStringWithNote(style) {
+    var range = window.getSelection().getRangeAt(0);
+    var startOffset = range.startOffset;
+    var endOffset = range.endOffset;
+    var selectionContents = range.extractContents();
+    var elm = document.createElement("highlight");
+    var id = guid();
+    
+    elm.appendChild(selectionContents);
+    elm.setAttribute("id", id);
+    elm.setAttribute("onclick","callHighlightWithNoteURL(this);");
+    elm.setAttribute("class", style);
+    
+    range.insertNode(elm);
+    thisHighlight = elm;
+    
+    var params = [];
+    params.push({id: id, rect: getRectForSelectedText(elm), startOffset: startOffset.toString(), endOffset: endOffset.toString()});
+    
+    return JSON.stringify(params);
+}
+
+function getHighlightId() {
+    return thisHighlight.id;
 }
 
 // Menu colors
@@ -175,6 +203,17 @@ var callHighlightURL = function(elm) {
     window.location = URLBase + encodeURIComponent(currentHighlightRect);
 }
 
+// Method that call that a hightlight with note was clicked
+// with URL scheme and rect informations
+var callHighlightWithNoteURL = function(elm) {
+    event.stopPropagation();
+    var URLBase = "highlight-with-note://";
+    var currentHighlightRect = getRectForSelectedText(elm);
+    thisHighlight = elm;
+    
+    window.location = URLBase + encodeURIComponent(currentHighlightRect);
+}
+
 // Reading time
 function getReadingTime() {
     var text = document.body.innerText;
@@ -197,6 +236,8 @@ var getAnchorOffset = function(target, horizontal) {
     }
     
     if (horizontal) {
+//        return document.body.clientWidth * Math.floor(elem.offsetTop / window.innerHeight);
+        //pd: changed
         return window.innerWidth * Math.floor(elem.offsetTop / window.innerHeight);
     }
     
@@ -231,7 +272,10 @@ function findElementWithIDInView() {
 
         // Horizontal scroll
         if (document.body.scrollTop == 0) {
+//            var elLeft = document.body.clientWidth * Math.floor(element.offsetTop / window.innerHeight);
+            //pd: changed
             var elLeft = window.innerWidth * Math.floor(element.offsetTop / window.innerHeight);
+
             // document.body.scrollLeft = elLeft;
 
             if (elLeft == document.body.scrollLeft) {
@@ -297,6 +341,8 @@ function goToEl(el) {
         to scroll to that page.
     */
     if( document.body.scrollTop == 0 ){
+//        var elLeft = document.body.clientWidth * Math.floor(el.offsetTop / window.innerHeight);
+        //pd: changed
         var elLeft = window.innerWidth * Math.floor(el.offsetTop / window.innerHeight);
         document.body.scrollLeft = elLeft;
     }
@@ -351,6 +397,8 @@ function findSentenceWithIDInView(els) {
 
         // Horizontal scroll
         if (document.body.scrollTop == 0) {
+//            var elLeft = document.body.clientWidth * Math.floor(element.offsetTop / window.innerHeight);
+            //pd: changed
             var elLeft = window.innerWidth * Math.floor(element.offsetTop / window.innerHeight);
             // document.body.scrollLeft = elLeft;
 

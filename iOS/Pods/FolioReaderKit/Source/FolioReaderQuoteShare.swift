@@ -20,6 +20,7 @@ class FolioReaderQuoteShare: UIViewController {
     let collectionViewLayout = UICollectionViewFlowLayout()
     let itemSize: CGFloat = 90
     var dataSource = [QuoteImage]()
+    //pd: changed
 //    let imagePicker = UIImagePickerController()
     var selectedIndex = 0
 
@@ -53,9 +54,9 @@ class FolioReaderQuoteShare: UIViewController {
         self.setCloseButton(withConfiguration: self.readerConfig)
         configureNavBar()
 
-        let titleAttrs = [NSAttributedStringKey.foregroundColor: self.readerConfig.tintColor]
+        let titleAttrs = [NSAttributedString.Key.foregroundColor: self.readerConfig.tintColor]
         let share = UIBarButtonItem(title: self.readerConfig.localizedShare, style: .plain, target: self, action: #selector(shareQuote(_:)))
-        share.setTitleTextAttributes(titleAttrs, for: UIControlState())
+        share.setTitleTextAttributes(titleAttrs, for: UIControl.State())
         navigationItem.rightBarButtonItem = share
 
         let isPad = (UIDevice.current.userInterfaceIdiom == .pad)
@@ -108,10 +109,10 @@ class FolioReaderQuoteShare: UIViewController {
         filterImage.addSubview(titleLabel)
 
         // Attributed author
-        let attrs = [NSAttributedStringKey.font: UIFont(name: "Lato-Italic", size: 15)!]
+        let attrs = [NSAttributedString.Key.font: UIFont(name: "Lato-Italic", size: 15)!]
         let attributedString = NSMutableAttributedString(string:"\(self.readerConfig.localizedShareBy) ", attributes: attrs)
 
-        let attrs1 = [NSAttributedStringKey.font: UIFont(name: "Lato-Regular", size: 15)!]
+        let attrs1 = [NSAttributedString.Key.font: UIFont(name: "Lato-Regular", size: 15)!]
         let boldString = NSMutableAttributedString(string: authorName, attributes:attrs1)
         attributedString.append(boldString)
 
@@ -168,7 +169,7 @@ class FolioReaderQuoteShare: UIViewController {
         collectionView.dataSource = self
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.backgroundColor = background
-        collectionView.decelerationRate = UIScrollViewDecelerationRateFast
+        collectionView.decelerationRate = UIScrollView.DecelerationRate.fast
         view.addSubview(collectionView)
 
         if (UIDevice.current.userInterfaceIdiom == .phone) {
@@ -185,6 +186,7 @@ class FolioReaderQuoteShare: UIViewController {
         }
 
         // Picker delegate
+        //pd: changed
 //        imagePicker.delegate = self
 
         // Select first item
@@ -285,7 +287,7 @@ class FolioReaderQuoteShare: UIViewController {
         shareItems.insert(act, at: 0)
 
         let activityViewController = UIActivityViewController(activityItems: shareItems, applicationActivities: nil)
-        activityViewController.excludedActivityTypes = [UIActivityType.print, UIActivityType.postToVimeo]
+        activityViewController.excludedActivityTypes = [UIActivity.ActivityType.print, UIActivity.ActivityType.postToVimeo]
 
         // Pop style on iPad
         if let actv = activityViewController.popoverPresentationController {
@@ -380,12 +382,14 @@ extension FolioReaderQuoteShare: UICollectionViewDelegate {
             let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
 
             let takePhoto = UIAlertAction(title: self.readerConfig.localizedTakePhoto, style: .default, handler: { (action) -> Void in
+                //pd: changed
 //                self.imagePicker.sourceType = .camera
 //                self.imagePicker.allowsEditing = true
 //                self.present(self.imagePicker, animated: true, completion: nil)
             })
 
             let existingPhoto = UIAlertAction(title: self.readerConfig.localizedChooseExisting, style: .default) { (action) -> Void in
+                //pd: changed
 //                self.imagePicker.sourceType = .photoLibrary
 //                self.imagePicker.allowsEditing = true
 //                self.present(self.imagePicker, animated: true, completion: nil)
@@ -406,10 +410,13 @@ extension FolioReaderQuoteShare: UICollectionViewDelegate {
 }
 
 // MARK: ImagePicker delegate
-
+//pd: changed
 //extension FolioReaderQuoteShare: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-//        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+//// Local variable inserted by Swift 4.2 migrator.
+//let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+//
+//        if let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.editedImage)] as? UIImage {
 //
 //            let quoteImage = QuoteImage(withImage: image, alpha: 0.6, backgroundColor: UIColor.black)
 //
@@ -424,4 +431,14 @@ extension FolioReaderQuoteShare: UICollectionViewDelegate {
 //
 //        self.dismiss(animated: true, completion: nil)
 //    }
+//}
+//
+//// Helper function inserted by Swift 4.2 migrator.
+//fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
+//    return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+//}
+//
+//// Helper function inserted by Swift 4.2 migrator.
+//fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
+//    return input.rawValue
 //}

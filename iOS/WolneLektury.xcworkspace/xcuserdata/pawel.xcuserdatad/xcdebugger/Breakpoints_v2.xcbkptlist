@@ -9,22 +9,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pods/FolioReaderKit/Source/Extensions.swift"
-            timestampString = "561589149.444455"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "499"
-            endingLineNumber = "499"
-            landmarkName = "preferredStatusBarStyle"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Pods/OAuthSwift/Sources/OAuthSwiftHTTPRequest.swift"
             timestampString = "552830002.730597"
             startingColumnNumber = "9223372036854775807"
@@ -57,13 +41,13 @@
                   symbolName = "OAuthSwift.OAuthWebViewController.doHandle(Foundation.URL) -&gt; ()"
                   moduleName = "OAuthSwift"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pawel/Documents/DEV/WolneLekturyIOS/WolneLektury/Pods/OAuthSwift/Sources/OAuthWebViewController.swift"
-                  timestampString = "567099438.432732"
+                  urlString = "file:///Users/pawel/Documents/DEV/WolneLekturyGithubNowy/iOS/Pods/OAuthSwift/Sources/OAuthWebViewController.swift"
+                  timestampString = "575210244.196265"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "88"
                   endingLineNumber = "88"
-                  offsetFromSymbolStart = "75">
+                  offsetFromSymbolStart = "92">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -72,13 +56,13 @@
                   symbolName = "closure #1 () -&gt; () in OAuthSwift.OAuthWebViewController.doHandle(Foundation.URL) -&gt; ()"
                   moduleName = "OAuthSwift"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pawel/Documents/DEV/WolneLekturyIOS/WolneLektury/Pods/OAuthSwift/Sources/OAuthWebViewController.swift"
-                  timestampString = "567099438.4356149"
+                  urlString = "file:///Users/pawel/Documents/DEV/WolneLekturyGithubNowy/iOS/Pods/OAuthSwift/Sources/OAuthWebViewController.swift"
+                  timestampString = "575210244.19845"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "88"
                   endingLineNumber = "88"
-                  offsetFromSymbolStart = "4">
+                  offsetFromSymbolStart = "24">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -105,13 +89,13 @@
                   symbolName = "OAuthSwift.OAuthWebViewController.handle(Foundation.URL) -&gt; ()"
                   moduleName = "OAuthSwift"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pawel/Documents/DEV/WolneLekturyIOS/WolneLektury/Pods/OAuthSwift/Sources/OAuthWebViewController.swift"
-                  timestampString = "567099438.439404"
+                  urlString = "file:///Users/pawel/Documents/DEV/WolneLekturyGithubNowy/iOS/Pods/OAuthSwift/Sources/OAuthWebViewController.swift"
+                  timestampString = "575210244.2828389"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "77"
                   endingLineNumber = "77"
-                  offsetFromSymbolStart = "18">
+                  offsetFromSymbolStart = "36">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -120,13 +104,13 @@
                   symbolName = "closure #1 () -&gt; () in OAuthSwift.OAuthWebViewController.handle(Foundation.URL) -&gt; ()"
                   moduleName = "OAuthSwift"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pawel/Documents/DEV/WolneLekturyIOS/WolneLektury/Pods/OAuthSwift/Sources/OAuthWebViewController.swift"
-                  timestampString = "567099438.441412"
+                  urlString = "file:///Users/pawel/Documents/DEV/WolneLekturyGithubNowy/iOS/Pods/OAuthSwift/Sources/OAuthWebViewController.swift"
+                  timestampString = "575210244.285027"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "77"
                   endingLineNumber = "77"
-                  offsetFromSymbolStart = "4">
+                  offsetFromSymbolStart = "28">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -159,7 +143,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "200"
             endingLineNumber = "200"
-            landmarkName = "getAnchorOffset"
+            landmarkName = "getReadingTime"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
@@ -170,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/FolioReaderKit/Source/FolioReaderCenter.swift"
-            timestampString = "563802944.88905"
+            timestampString = "575210242.712196"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "148"
@@ -191,8 +175,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "74"
             endingLineNumber = "74"
-            landmarkName = "share(_:)"
-            landmarkType = "7">
+            landmarkName = "FolioReaderWebView"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

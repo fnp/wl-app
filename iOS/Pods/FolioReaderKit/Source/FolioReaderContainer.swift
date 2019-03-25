@@ -84,8 +84,10 @@ open class FolioReaderContainer: UIViewController {
             kCurrentFontFamily: FolioReaderFont.andada.rawValue,
             kNightMode: false,
             kCurrentFontSize: 2,
+            //pd: added
             kCurrentMarginSize: 2,
             kCurrentInterlineSize: 2,
+            //pd: added end
             kCurrentAudioRate: 1,
             kCurrentHighlightStyle: 0,
             kCurrentTOCMenu: 0,
@@ -140,9 +142,9 @@ open class FolioReaderContainer: UIViewController {
         self.centerNavigationController?.setNavigationBarHidden(self.readerConfig.shouldHideNavigationOnTap, animated: false)
         if let _centerNavigationController = self.centerNavigationController {
             self.view.addSubview(_centerNavigationController.view)
-            self.addChildViewController(_centerNavigationController)
+            self.addChild(_centerNavigationController)
         }
-        self.centerNavigationController?.didMove(toParentViewController: self)
+        self.centerNavigationController?.didMove(toParent: self)
 
         if (self.readerConfig.hideBars == true) {
             self.readerConfig.shouldHideNavigationOnTap = false
@@ -208,7 +210,7 @@ open class FolioReaderContainer: UIViewController {
     }
 
     override open var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent // self.folioReader.isNight(.lightContent, .default)
+        return self.folioReader.isNight(.lightContent, .default)
     }
 }
 
@@ -217,9 +219,9 @@ extension FolioReaderContainer {
         let alertController = UIAlertController(
             title: "Error",
             message: message,
-            preferredStyle: UIAlertControllerStyle.alert
+            preferredStyle: UIAlertController.Style.alert
         )
-        let action = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel) { [weak self]
+        let action = UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel) { [weak self]
             (result : UIAlertAction) -> Void in
             self?.dismiss()
         }

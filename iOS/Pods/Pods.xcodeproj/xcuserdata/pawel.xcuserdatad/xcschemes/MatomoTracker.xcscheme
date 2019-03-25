@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A938E07DF5A500E5C4FA1C9FD1886EB2"
+               BlueprintIdentifier = "E5E946621D3C17209E560BA231652F9F"
+               BuildableName = "MatomoTracker.framework"
                BlueprintName = "MatomoTracker"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "MatomoTracker.framework">
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
