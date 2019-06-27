@@ -99,6 +99,7 @@ class BookDetailsModel: Object, BookBase, Decodable, NSCopying {
         case fragment_data
         case audio_length
         case cover_color
+        case slug
     }
 
     convenience init(title: String, simple_thumb: String, url: String, simple_cover: String, pdf: String, epub: String, audio_length: String, cover_color: String, genres: [CategoryModel], kinds: [CategoryModel], media: [MediaModel], epochs: [CategoryModel], authors: [CategoryModel], fragmentTitle: String, fragmentHtml: String, slug: String) {
@@ -155,7 +156,12 @@ class BookDetailsModel: Object, BookBase, Decodable, NSCopying {
         let epochsArray = epochs ?? []
         let authorsArray = authors ?? []
         
-        self.init(title: title, simple_thumb: simple_thumb, url: url, simple_cover: simple_cover, pdf: pdf, epub: epub, audio_length: audio_length, cover_color: cover_color, genres: genresArray, kinds: kindsArray, media: mediaArray, epochs: epochsArray, authors: authorsArray, fragmentTitle: fragment_data?.title ?? "", fragmentHtml: fragment_data?.html ?? "", slug: "")
+        var slug = ""
+        if let slg = try container.decodeIfPresent(String.self, forKey: .slug) {
+            slug = slg
+        }
+        
+        self.init(title: title, simple_thumb: simple_thumb, url: url, simple_cover: simple_cover, pdf: pdf, epub: epub, audio_length: audio_length, cover_color: cover_color, genres: genresArray, kinds: kindsArray, media: mediaArray, epochs: epochsArray, authors: authorsArray, fragmentTitle: fragment_data?.title ?? "", fragmentHtml: fragment_data?.html ?? "", slug: slug)
     }
     
     

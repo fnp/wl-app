@@ -63,23 +63,7 @@ class BookDescriptionView: DesignableXibView {
         descSecondImageView.isHidden = !bookModel.has_audio
         descSecondLabel.isHidden = !bookModel.has_audio
         if isPremium{
-            
-            authorLabel.textColor = whiteTextColor
-            epochTitleLabel.textColor = whiteTextColor
-            kindTitleLabel.textColor = whiteTextColor
-            genreTitleLabel.textColor = whiteTextColor
-            
-            descFirstImageView.tintColor = whiteTextColor
-            descFirstLabel.textColor = whiteTextColor
-            descSecondImageView.tintColor = whiteTextColor
-            descSecondLabel.textColor = whiteTextColor
-            
-            lineView.backgroundColor = whiteTextColor
-            
-            titleLabel.textColor = orangeTextColor
-            epochLabel.textColor = orangeTextColor
-            kindLabel.textColor = orangeTextColor
-            genreLabel.textColor = orangeTextColor
+            setPremiumAppearance()
         }
         
         authorLabel.text = bookModel.author
@@ -89,8 +73,13 @@ class BookDescriptionView: DesignableXibView {
         genreLabel.text = bookModel.genre
     }
     
-    func setup(bookDetailsModel: BookDetailsModel){
+    
+    func setup(bookDetailsModel: BookDetailsModel, isPremium: Bool = false){
         setDescViewsVisibility(hidden: false)
+        
+        if isPremium{
+            setPremiumAppearance()
+        }
         
         authorLabel.text = bookDetailsModel.getAuthor()
         titleLabel.text = bookDetailsModel.title
@@ -98,27 +87,38 @@ class BookDescriptionView: DesignableXibView {
         kindLabel.text = bookDetailsModel.getKinds()
         genreLabel.text = bookDetailsModel.getGenres()
         
-        if bookDetailsModel.totalChapters > 0 && bookDetailsModel.currentChapter <= bookDetailsModel.totalChapters{
-            let progress = Double(bookDetailsModel.currentChapter)/Double(bookDetailsModel.totalChapters) * 100.0
-            descFirstLabel.text = String(format: "reading_progress".localized, progress).uppercased()
-        }
-        else {
-            descFirstLabel.text = ""
+        if isPremium == false {
+            if bookDetailsModel.totalChapters > 0 && bookDetailsModel.currentChapter <= bookDetailsModel.totalChapters{
+                let progress = Double(bookDetailsModel.currentChapter)/Double(bookDetailsModel.totalChapters) * 100.0
+                descFirstLabel.text = String(format: "reading_progress".localized, progress).uppercased()
+            }
+            else {
+                descFirstLabel.text = ""
+            }
+            setTrashButtonHidden(isHidden: false)
         }
         
         descSecondImageView.isHidden = bookDetailsModel.audio_length.count == 0
         descSecondLabel.isHidden = bookDetailsModel.audio_length.count == 0
-
-        /*
-        if bookDetailsModel.totalAudioChapters > 0 && bookDetailsModel.currentAudioChapter < bookDetailsModel.totalAudioChapters{
-            let progress = Double(bookDetailsModel.currentAudioChapter + 1)/Double(bookDetailsModel.totalAudioChapters) * 100.0
-            descSecondLabel.text = String(format: "listening_progress".localized, progress).uppercased()
-        }
-        else {
-            descSecondLabel.text = ""
-        }
-        */
-        setTrashButtonHidden(isHidden: false)
+    }
+    
+    func setPremiumAppearance(){
+        authorLabel.textColor = whiteTextColor
+        epochTitleLabel.textColor = whiteTextColor
+        kindTitleLabel.textColor = whiteTextColor
+        genreTitleLabel.textColor = whiteTextColor
+        
+        descFirstImageView.tintColor = whiteTextColor
+        descFirstLabel.textColor = whiteTextColor
+        descSecondImageView.tintColor = whiteTextColor
+        descSecondLabel.textColor = whiteTextColor
+        
+        lineView.backgroundColor = whiteTextColor
+        
+        titleLabel.textColor = orangeTextColor
+        epochLabel.textColor = orangeTextColor
+        kindLabel.textColor = orangeTextColor
+        genreLabel.textColor = orangeTextColor
     }
     
     func setTrashButtonHidden(isHidden: Bool){

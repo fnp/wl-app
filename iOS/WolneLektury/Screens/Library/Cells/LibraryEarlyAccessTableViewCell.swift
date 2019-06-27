@@ -27,7 +27,7 @@ class LibraryEarlyAccessTableViewCell: WLTableViewCell {
     @IBOutlet weak var miniatureOverlayView: BookImageOverlayView!
     @IBOutlet weak var miniatureBgView: UIView!
     @IBOutlet weak var refreshButton: ActivityIndicatorButton!
-    var book: BookModel?
+    var book: BookDetailsModel?
     @IBOutlet weak var noPremiumBookLabel: UILabel!
     private var height: CGFloat = 199
 
@@ -37,9 +37,9 @@ class LibraryEarlyAccessTableViewCell: WLTableViewCell {
         noPremiumBookLabel.text = DatabaseManager.shared.isUserPremium() ? "library_empty_header_logged".localized : "library_empty_header".localized
     }
     
-    func setup(state: ActivityIndicatorButtonState, bookModel: BookModel?) {
+    func setup(state: ActivityIndicatorButtonState, bookDetailsModel: BookDetailsModel?) {
         
-        self.book = bookModel
+        self.book = bookDetailsModel
         
         noPremiumBookLabel.isHidden = true
         containerView.isHidden = true
@@ -49,8 +49,8 @@ class LibraryEarlyAccessTableViewCell: WLTableViewCell {
         case .hidden:
             if let book = self.book {
                 containerView.isHidden = false
-                bookDescriptionView.setup(bookModel: book, isPremium: true)
-                miniatureOverlayView.setup(bookModel: book)
+                bookDescriptionView.setup(bookDetailsModel: book, isPremium: true)
+                miniatureOverlayView.hideTextAndIcons()
                 miniatureImageView.kf.cancelDownloadTask()
                 miniatureImageView.image = #imageLiteral(resourceName: "list_nocover")
                 

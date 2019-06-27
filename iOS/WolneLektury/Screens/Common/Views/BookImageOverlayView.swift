@@ -33,6 +33,8 @@ class BookImageOverlayView: DesignableXibView {
         }
         
         func setup(bookModel: BookModel){
+            setup(attributedTitle: bookModel.getAttributedAuthorAndTitle(titleFont: UIFont.systemFont(ofSize: 9, weight: .medium), descFont: UIFont.systemFont(ofSize: 11, weight: .bold)), bgColor: bookModel.bgColor, hasAudio: bookModel.has_audio)
+
             let titleAttributedText = bookModel.getAttributedAuthorAndTitle(titleFont: UIFont.systemFont(ofSize: 9, weight: .medium), descFont: UIFont.systemFont(ofSize: 11, weight: .bold))
             
             readImageView.backgroundColor = bookModel.bgColor
@@ -49,5 +51,33 @@ class BookImageOverlayView: DesignableXibView {
                 iconsWidthConstraint.constant = 18
             }
         }
+    
+    func setup(bookDetailsModel: BookDetailsModel){
+        setup(attributedTitle: bookDetailsModel.getAttributedAuthorAndTitle(titleFont: UIFont.systemFont(ofSize: 9, weight: .medium), descFont: UIFont.systemFont(ofSize: 11, weight: .bold)), bgColor: bookDetailsModel.bgColor, hasAudio: bookDetailsModel.audio_length.count > 0)
+        
+    }
+
+    func hideTextAndIcons() {
+        textBgColorView.isHidden = true
+        iconsView.isHidden = true
+        titleLabel.isHidden = true
+    }
+    
+    private func setup(attributedTitle: NSAttributedString, bgColor: UIColor, hasAudio: Bool) {
+        
+        readImageView.backgroundColor = bgColor
+        audiobookImageView.backgroundColor = bgColor
+        textBgColorView.backgroundColor = bgColor
+        titleLabel.attributedText = attributedTitle
+        
+        if hasAudio{
+            audiobookImageView.isHidden = false
+            iconsWidthConstraint.constant = 39
+        }
+        else{
+            audiobookImageView.isHidden = true
+            iconsWidthConstraint.constant = 18
+        }
+    }
 }
 

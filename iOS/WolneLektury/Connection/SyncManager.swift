@@ -85,7 +85,7 @@ class SyncManager: NSObject {
     
     func getPreview(completionHandler: ConnectionCompletionHandler?){
         
-        networkService.performRequest(with: .preview, responseModelType: [BookModel].self, params: nil, completionHandler: completionHandler)
+        networkService.performRequest(with: .preview, responseModelType: [BookDetailsModel].self, params: nil, completionHandler: completionHandler)
     }
 
 

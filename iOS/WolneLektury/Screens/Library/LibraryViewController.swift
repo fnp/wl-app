@@ -138,16 +138,16 @@ class LibraryViewController: MainViewController {
         guard earlyAccessCellState == .not_loaded else {
             return
         }
-        
+
         if Constants.donateEnabled {
             earlyAccessCellState = .loaded
-            earlyAccessCell.setup(state: .hidden, bookModel: nil)
+            earlyAccessCell.setup(state: .hidden, bookDetailsModel: nil)
         }
         
         
         
         earlyAccessCellState = .loading
-        earlyAccessCell.setup(state: .loading, bookModel: nil)
+        earlyAccessCell.setup(state: .loading, bookDetailsModel: nil)
         
         syncManager.getPreview { [weak self] (result) in
             
@@ -155,12 +155,12 @@ class LibraryViewController: MainViewController {
             
             switch result {
             case .success(let model):
-                let array = model as! [BookModel]
+                let array = model as! [BookDetailsModel]
                 strongSelf.earlyAccessCellState = .loaded
-                strongSelf.earlyAccessCell.setup(state: .hidden, bookModel: array.count > 0 ? array[0] : nil)
+                strongSelf.earlyAccessCell.setup(state: .hidden, bookDetailsModel: array.count > 0 ? array[0] : nil)
             case .failure(let error):
                 strongSelf.earlyAccessCellState = .not_loaded
-                strongSelf.earlyAccessCell.setup(state: .button, bookModel: nil)
+                strongSelf.earlyAccessCell.setup(state: .button, bookDetailsModel: nil)
             }
             strongSelf.tableView.reloadData()
         }
@@ -255,8 +255,8 @@ extension LibraryViewController: LibraryCollectionTableViewCellDelegate {
 
 extension LibraryViewController: BecomeFriendTableViewCellDelegate {
     func becomeFriendTableViewCellTapped() {
-        
-        appDelegate.mainNavigator.presentSupportUs()
+        getPreview()
+//        appDelegate.mainNavigator.presentSupportUs()
     }
 }
 

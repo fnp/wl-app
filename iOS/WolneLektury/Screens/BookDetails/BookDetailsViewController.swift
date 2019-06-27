@@ -126,11 +126,13 @@ class BookDetailsViewController: WLViewController {
         }
         
         if isBookPremium && DatabaseManager.shared.isUserPremium() == false {
+            buttonsContainer.isUserInteractionEnabled = false
             becomeFriendView.isHidden = false
             becomeFriendLabel.text = "become_friend_desc".localized
             becomeFriendButton.text = "become_friend_button".localized.uppercased()
         }
         else {
+            buttonsContainer.isUserInteractionEnabled = true
             becomeFriendView.isHidden = true
         }
         
